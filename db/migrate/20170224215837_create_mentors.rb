@@ -10,7 +10,7 @@ class CreateMentors < ActiveRecord::Migration[5.0]
       t.datetime :availability
       t.string :race
       t.string :gender
-      t.string :class
+      t.string :socioeconomic_background
       t.string :orientation
       t.string :other
       t.string :location
