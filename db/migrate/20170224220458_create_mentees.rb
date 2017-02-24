@@ -1,13 +1,10 @@
-class CreateMentors < ActiveRecord::Migration[5.0]
+class CreateMentees < ActiveRecord::Migration[5.0]
   def change
-    create_table :mentors do |t|
+    create_table :mentees do |t|
       t.string :name
       t.string :email
-      t.integer :years_of_experience
-      t.string :current_company
-      t.string :current_industry
-      t.string :linkedin_link
-      t.datetime :availability
+      t.text :objective
+      t.boolean :mentor_demographic_pref
       t.string :race
       t.string :gender
       t.string :class
