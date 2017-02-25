@@ -13,16 +13,20 @@ class MentorsController < ApplicationController
   def create
     @mentor = Mentor.new(mentor_params)
 
-    if @mentor.save
-      render json: @mentor
-    else
-      redirect_to 'new'
+    respond_to do |format|
+      if @mentor.save
+        format.html { redirect_to @mentor, notice: 'Mentor was successfully created.' }
+        format.json { render :show, status: :created, location: @mentor }
+      else
+        format.html { render :new }
+        format.json { render json: @mentor.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def show
     @mentor = Mentor.find(1)
-    render json:@mentor    
+    render json:@mentor
   end
 
   def edit
