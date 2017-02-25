@@ -1,0 +1,54 @@
+<article class="xviews xmentor xnew">
+  <%= form_for(@mentor) do |f| %>
+
+    <div class="field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :email; %>
+      <%= f.text_field :email %>
+
+      <%= f.label :years_of_experience %>
+      <%= f.number_field :years_of_experience %>
+
+      <%= f.label :current_company %>
+      <%= f.text_field :current_company %>
+
+      <%= f.label :current_industry %>
+      <%= f.text_field :current_industry %>
+
+      <%= f.label :linkedin_link %>
+      <%= f.text_field :linkedin_link %>
+
+      <%= f.label :race %>
+      <%= f.text_field :race %>
+
+      <%= f.label :gender %>
+      <%= f.text_field :gender %>
+
+      <%= f.label :socioeconomic_background %>
+      <%= f.text_field :socioeconomic_background %>
+
+      <%= f.label :orientation %>
+      <%= f.text_field :orientation %>
+
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+
+      <%= f.label :interests %>
+      <%= f.text_field :interests %>
+
+      <%= f.label :availability %>
+      <%= f.text_field :availability %>
+
+      <%= f.label :other %>
+      <%= f.text_field :other %>
+    </div>
+    <div class="xbuttons">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</article>

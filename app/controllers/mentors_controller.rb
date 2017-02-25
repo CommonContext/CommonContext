@@ -1,5 +1,5 @@
 class MentorsController < ApplicationController
-  before_action :find_mentor, only: [:edit, :destroy]
+  before_action :find_mentor, only: [:show, :edit, :destroy]
 
   # def index
   #   @mentors = Mentor.all
@@ -25,7 +25,7 @@ class MentorsController < ApplicationController
   end
 
   def show
-    @mentor = Mentor.find(1)
+    # @mentor = Mentor.find(1)
     render json:@mentor
   end
 
@@ -53,7 +53,8 @@ class MentorsController < ApplicationController
   end
 
   def mentor_params
-    params.require(mentor).permit(:name,
+    params.require(:mentor).permit(:first_name,
+                                  :last_name,
                                   :email,
                                   :years_of_experience,
                                   :current_company,
