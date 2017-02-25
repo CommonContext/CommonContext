@@ -6,6 +6,7 @@ class MenteesController < ApplicationController
   end
 
   def create
+    @mentee = Mentee.new(mentee_params)
     respond_to do |format|
       if @mentee.save
         format.html { redirect_to @mentee }
@@ -23,7 +24,7 @@ class MenteesController < ApplicationController
     end
 
     def mentee_params
-      params.require(mentee).permit(:name,
+      params.require(:mentee).permit(:name,
                                     :email,
                                     :objective,
                                     :mentor_demographic_pref,
