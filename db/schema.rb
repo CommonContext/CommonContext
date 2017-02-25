@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224221106) do
+ActiveRecord::Schema.define(version: 20170225223326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170224221106) do
   end
 
   create_table "mentees", force: :cascade do |t|
-    t.string   "name"
+    t.string   "first_name"
     t.string   "email"
     t.text     "objective"
     t.boolean  "mentor_demographic_pref"
@@ -53,10 +53,11 @@ ActiveRecord::Schema.define(version: 20170224221106) do
     t.boolean  "good_standing"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "last_name"
   end
 
   create_table "mentors", force: :cascade do |t|
-    t.string   "name"
+    t.string   "first_name"
     t.string   "email"
     t.integer  "years_of_experience"
     t.string   "current_company"
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 20170224221106) do
     t.boolean  "good_standing"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "last_name"
   end
 
   create_table "users", force: :cascade do |t|
