@@ -1,6 +1,5 @@
 <article class="xviews xmentees xnew">
 	<%= form_for(@mentee) do |f| %>
-		<%= f.error_messages %>
 		
 	  <%= f.label :first_name %>
 	  <%= f.text_field :first_name %><br>
@@ -11,11 +10,42 @@
 	  <%= f.label :email %>
 	  <%= f.email_field :email %><br>
 
-	  <%= f.label :password %>
-	  <%= f.password_field :password %><br>
+		<%= f.label :last_name %>
+	  <%= f.text_field :last_name %><br>	 
 
-	  <%= f.label :password_confirmation, "Confirmation" %>
-	  <%= f.password_field :password_confirmation %><br>
+	  <%= f.label :objective, "What is your main goal when meeting with your mentor?" %>
+	  <%= f.text_area :objective %><br>
+
+	  <div class="diversity">
+
+	  <%= f.label :race %>
+	  <%= f.text_field :race %><br>
+
+	  <%= f.label :gender %>
+	  <%= f.text_field :gender %><br>
+
+	  <%= f.label :socioeconomic_background %>
+	  <%= f.text_field :socioeconomic_background %><br>
+
+		<%= f.label :orientation %>
+	  <%= f.text_field :orientation %><br>
+
+	  <%= f.label :other %>
+	  <%= f.text_field :other %><br>
+
+	  </div>
+
+	  <%= f.label :location %>
+	  <%= f.text_field :location %><br>
+
+	  <%= f.label :interests %>
+	  <%= f.text_field :interests %><br>
+
+	  <%= f.label :linkedin_link %>
+	  <%= f.text_field :linkedin_link %><br>
+
+	  <%= f.label :mentor_demographic_pref, 'I prefer my mentor to share a common context with me' %>
+	  <%= f.check_box :mentor_demographic_pref %><br /> 
 
 	  <%= f.submit  %>
 	<% end %>
