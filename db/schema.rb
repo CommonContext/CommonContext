@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20170225223326) do
     t.integer  "mentee_rating"
     t.integer  "mentor_id"
     t.integer  "mentee_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["mentee_id"], name: "index_appointments_on_mentee_id", using: :btree
     t.index ["mentor_id"], name: "index_appointments_on_mentor_id", using: :btree
   end
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20170225223326) do
     t.string   "location"
     t.text     "interests"
     t.boolean  "good_standing"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "last_name"
   end
 
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20170225223326) do
     t.string   "location"
     t.text     "interests"
     t.boolean  "good_standing"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "last_name"
   end
 
