@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   resources :mentors #TODO: Determine if we need to limit any of these routes
 
-  root 'mentors#index'
+  root 'mentors#show'
 
 end
