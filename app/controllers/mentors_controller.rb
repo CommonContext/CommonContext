@@ -1,8 +1,9 @@
-class MentorController < ApplicationController
+class MentorsController < ApplicationController
   before_action :find_mentor, only: [:edit, :show, :destroy]
 
   def index
     @mentors = Mentor.all
+    render json: @mentors
   end
 
   def new
