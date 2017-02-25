@@ -23,6 +23,8 @@
       <%= f.label :linkedin_link %>
       <%= f.text_field :linkedin_link %>
 
+      <div class="diversity">
+
       <%= f.label :race %>
       <%= f.text_field :race %>
 
@@ -35,6 +37,8 @@
       <%= f.label :orientation %>
       <%= f.text_field :orientation %>
 
+	    </div>
+
       <%= f.label :location %>
       <%= f.text_field :location %>
 
@@ -42,7 +46,7 @@
       <%= f.text_field :interests %>
 
       <%= f.label :availability %>
-      <%= f.text_field :availability %>
+      <%= f.datetime_field :availability %>
 
       <%= f.label :other %>
       <%= f.text_field :other %>
