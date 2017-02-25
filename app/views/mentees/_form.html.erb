@@ -1,0 +1,22 @@
+<article class="xviews xmentees xnew">
+	<%= form_for(@mentee) do |f| %>
+		<%= f.error_messages %>
+		
+	  <%= f.label :first_name %>
+	  <%= f.text_field :first_name %><br>
+
+	  <%= f.label :last_name %>
+	  <%= f.text_field :last_name %><br>
+
+	  <%= f.label :email %>
+	  <%= f.email_field :email %><br>
+
+	  <%= f.label :password %>
+	  <%= f.password_field :password %><br>
+
+	  <%= f.label :password_confirmation, "Confirmation" %>
+	  <%= f.password_field :password_confirmation %><br>
+
+	  <%= f.submit  %>
+	<% end %>
+</article>
