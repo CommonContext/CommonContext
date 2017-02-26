@@ -1,5 +1,5 @@
 class MentorsController < ApplicationController
-  before_action :find_mentor, only: [:edit, :destroy]
+  before_action :find_mentor, only: [:show, :edit, :destroy]
 
   # def index
   #   @mentors = Mentor.all
@@ -13,10 +13,14 @@ class MentorsController < ApplicationController
   def create
     @mentor = Mentor.new(mentor_params)
 
-    if @mentor.save
-      render json: @mentor
-    else
-      redirect_to 'new'
+    respond_to do |format|
+      if @mentor.save
+        format.html { redirect_to @mentor, notice: 'Mentor was successfully created.' }
+        format.json { render :show, status: :created, location: @mentor }
+      else
+        format.html { render :new }
+        format.json { render json: @mentor.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -49,7 +53,8 @@ class MentorsController < ApplicationController
   end
 
   def mentor_params
-    params.require(mentor).permit(:name,
+    params.require(:mentor).permit(:first_name,
+                                  :last_name,
                                   :email,
                                   :years_of_experience,
                                   :current_company,
