@@ -1,5 +1,6 @@
 class MentorsController < ApplicationController
   before_action :find_mentor, only: [:show, :edit, :destroy]
+  before_action :set_auth
 
   # def index
   #   @mentors = Mentor.all
@@ -25,8 +26,9 @@ class MentorsController < ApplicationController
   end
 
   def show
-    # @mentor = Mentor.find(1)
-    render json:@mentor
+    @mentor = Mentor.find(1)
+    # render json:@mentor
+    render :show
   end
 
   def edit
@@ -49,7 +51,8 @@ class MentorsController < ApplicationController
   private
 
   def find_mentor
-    @mentor = Mentor.find(params[:id])
+    @mentor = Mentor.find(1)
+    # @mentor = Mentor.find(params[:id])
   end
 
   def mentor_params
@@ -68,6 +71,12 @@ class MentorsController < ApplicationController
                                   :interests,
                                   :availability,
                                   :other)
+  end
+
+  private
+
+  def set_auth
+    @auth = session[:omniauth] if session[:omniauth]
   end
 
 end
