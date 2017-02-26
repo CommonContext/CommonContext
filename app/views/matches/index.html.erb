@@ -5,11 +5,8 @@
 
 
 <h2>Mentee Matches</h2>
-	<% @matches.mentor_matches.each do |match| %>
+	<% @matches.each do |match| %>
 		<ul>
-			<li> <%= match.first_name + match.last_name %>
-			<span> <%= match.company %> </span>
-			<span> <%= match.interests %> </span>
-			</li>
+			<li> <%= match.first_name %> </li>
 		</ul>
 	<% end %>
