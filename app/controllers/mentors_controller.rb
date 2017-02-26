@@ -25,8 +25,8 @@ class MentorsController < ApplicationController
   end
 
   def show
-    # @mentor = Mentor.find(1)
-    render json:@mentor
+    @mentor = Mentor.find_by(params[:id])
+    render json:@mentor    
   end
 
   def edit
