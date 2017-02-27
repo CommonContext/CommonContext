@@ -1,5 +1,5 @@
 class MentorsController < ApplicationController
-  before_action :find_mentor, only: [:show, :edit, :delete]
+  before_action :find_mentor, only: [:show, :edit, :update, :destroy]
   before_action :set_auth
 
   # def index
@@ -43,17 +43,16 @@ class MentorsController < ApplicationController
     end
   end
 
-  def destroy
-    @mentor.destroy
-    redirect_to root_path
-  end
+  # def destroy
+  #   @mentor.destroy
+  #   redirect_to root_path
+  # end
 
 
   private
 
   def find_mentor
     @mentor = Mentor.find(params[:id])
-    # @mentor = Mentor.find(params[:id])
   end
 
   def mentor_params
@@ -73,7 +72,7 @@ class MentorsController < ApplicationController
                                   :availability,
                                   :other,
                                   :user_id,
-                                  :user_id)
+                                  )
   end
 
   private

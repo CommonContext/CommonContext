@@ -7,15 +7,49 @@ class HomesController < ApplicationController
   end
   
   def check
-    if !params[:id]
-      return
-    end
-    
+    # if !params[:id]
+      # if current_user!= nil
+      #   puts @auth["uid"]
+      # u = User.find_by(uid: @auth["uid"])
+      # puts u
+      # m = u.mentors
+      # mentor_id = m.ids
+      # puts "printing homes controller mentor"
+      # puts m, mentor_id
+      # puts "************"
+      #   puts @auth["uid"]
+      # u = User.find_by(uid: @auth["uid"])
+      # puts u
+      # m = u.mentees
+      # mentee_id = m.ids
+      # puts "printing homes controller mentor"
+      # puts m, mentee_id
+      # puts "************"
+    # end
+    #   return
+    # end
+
     if current_user != nil && (find_mentor_uids.include?(@auth["uid"]))
-      redirect_to mentor_url(id: params[:id])
+      puts @auth["uid"]
+      u = User.find_by(uid: @auth["uid"])
+      puts u
+      m = u.mentors
+      mentor_id = m.ids[0]
+      puts "printing homes controller mentor"
+      puts "mentor id is #{mentor_id}"
+      puts "************"
+      redirect_to mentor_url(id: mentor_id)
+
     elsif current_user != nil && (find_mentee_uids.include?(@auth["uid"]))
-      redirect_to mentee_url(id: params[:id])
-    else
+        puts @auth["uid"]
+      u = User.find_by(uid: @auth["uid"])
+      puts u
+      m = u.mentees
+      mentee_id = m.ids[0]
+      puts "printing homes controller mentor"
+      puts "mentee id is #{mentee_id}"
+      puts "************"
+      redirect_to mentee_url(id: mentee_id)
     end
   end
 
