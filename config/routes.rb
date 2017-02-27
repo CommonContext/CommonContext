@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   	resources :matches
   end
 
-  root 'mentors#show'
+  root 'homes#index'
 
   get 'auth/:provider/callback', to: 'sessions#create'
 
   delete 'sign_out', to: 'sessions#destroy', as: 'sign_out'
+  delete 'mentees/sign_out', to: 'sessions#destroy', as: 'sign_out_1'
+  delete 'mentors/sign_out', to: 'sessions#destroy', as: 'sign_out_2'
 
 end

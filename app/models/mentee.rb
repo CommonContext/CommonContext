@@ -1,6 +1,7 @@
 class Mentee < ApplicationRecord
   has_many :matches
   has_many :appointments
+  belongs_to :user, optional: true
 
 # - create a method to find 3 mentors
 # - iterate through mentors

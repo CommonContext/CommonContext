@@ -1,5 +1,6 @@
 class MenteesController < ApplicationController
   before_action :set_mentee, only: [:show, :edit, :update, :destroy]
+  before_action :set_auth
 
   def new
     @mentee = Mentee.new
@@ -16,6 +17,12 @@ class MenteesController < ApplicationController
         format.json { render json: @mentee.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show
+    @mentee = Mentee.find(params[:id])
+    # render json:@mentor
+    render :show
   end
 
    private
@@ -36,7 +43,12 @@ class MenteesController < ApplicationController
                                     :orientation,
                                     :other,
                                     :location,
-                                    :interests)
+                                    :interests,
+                                    :user_id)
       
+  end
+
+  def set_auth
+    @auth = session[:omniauth] if session[:omniauth]
   end
 end

@@ -1,5 +1,5 @@
 class MentorsController < ApplicationController
-  before_action :find_mentor, only: [:show, :edit, :destroy]
+  before_action :find_mentor, only: [:show, :edit, :delete]
   before_action :set_auth
 
   # def index
@@ -13,7 +13,8 @@ class MentorsController < ApplicationController
 
   def create
     @mentor = Mentor.new(mentor_params)
-
+    puts "priting params"
+    p mentor_params
     respond_to do |format|
       if @mentor.save
         format.html { redirect_to @mentor, notice: 'Mentor was successfully created.' }
@@ -26,7 +27,7 @@ class MentorsController < ApplicationController
   end
 
   def show
-    @mentor = Mentor.find(1)
+    @mentor = Mentor.find(params[:id])
     # render json:@mentor
     render :show
   end
@@ -51,7 +52,7 @@ class MentorsController < ApplicationController
   private
 
   def find_mentor
-    @mentor = Mentor.find(1)
+    @mentor = Mentor.find(params[:id])
     # @mentor = Mentor.find(params[:id])
   end
 
@@ -70,7 +71,9 @@ class MentorsController < ApplicationController
                                   :location,
                                   :interests,
                                   :availability,
-                                  :other)
+                                  :other,
+                                  :user_id,
+                                  :user_id)
   end
 
   private

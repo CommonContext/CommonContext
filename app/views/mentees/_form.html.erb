@@ -46,7 +46,9 @@
 
 	  <%= f.label :mentor_demographic_pref, 'I prefer my mentor to share a common context with me' %>
 	  <%= f.check_box :mentor_demographic_pref %><br />
-
+	  <%= user = User.find_by(uid: @auth['uid']) %>
+	  <%= user.name %>
+    <%= f.hidden_field :user, value: user %>
 		<div class="xbuttons">
 	  <%= f.submit  %>
 		</div>
