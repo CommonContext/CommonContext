@@ -3,8 +3,8 @@ class Match < ApplicationRecord
   belongs_to :mentee
 
 # TODO: refactor. Algorithm depends on default fields
-# existing on the mentee and mentor model if they haven't been specified
-# we also probably won't want to load our entire mentor table everytime this
+# existing on the mentee and mentor model, and need to handle case when they haven't been specified
+# we also won't want to load our entire mentor table everytime this
 # is called
 
   def mentor_matches(mentee)
