@@ -20,9 +20,6 @@ class MenteesController < ApplicationController
   end
 
   def show
-    @mentee = Mentee.find(params[:id])
-    # render json:@mentor
-    render :show
   end
 
    private

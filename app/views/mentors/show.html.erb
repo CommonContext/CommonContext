@@ -1,1 +1,19 @@
-show.html.erb
+<article class="xviews xmentors xshow">
+	<h2>My Profile</h2>
+
+	<% if @mentor.appointments.any? %>
+		<h3>Upcoming Appointments</h3>
+		<% @mentor.appointments.each do |appointment| %>
+			<ul>
+				<li>
+					<%= link_to "#{appointment.datetime}",mentor_appointment_path(appointment) %>
+				</li>	
+			</ul>
+			
+		<% end %>
+<!-- put else inside cone when uncommenting <%  %> -->
+		<h3>View pending matches</h3>
+		<!-- maybe something here to show pending matches that need scheduling confirmation -->
+	<% end %>
+</article>
+
