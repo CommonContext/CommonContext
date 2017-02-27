@@ -6,6 +6,9 @@ class MentorsController < ApplicationController
   #   render json: @mentors
   # end
 
+  def show 
+  end
+
   def new
     @mentor = Mentor.new
   end
@@ -22,11 +25,6 @@ class MentorsController < ApplicationController
         format.json { render json: @mentor.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def show
-    @mentor = Mentor.find_by(params[:id])
-    render json:@mentor    
   end
 
   def edit

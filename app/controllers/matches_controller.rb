@@ -1,23 +1,23 @@
 class MatchesController < ApplicationController
 	
-	def index
+	def show
+		@match = Match.find(params[:id])
 		@mentee = Mentee.find(params[:mentee_id])
-		@mentors = Mentor.all
-		@matches = @mentee.mentor_matches(@mentors)
+	end	
 
-		# @matches.each do |mentor|
-		# 	Match.create(mentee_id: @mentee.id, mentor_id: mentor.id)
-		# end
-	end
-
-	def new
+	def get_matches
+		@mentee = Mentee.find(params[:id])
 		@match = Match.new
+		@mentor_matches = @match.mentor_matches(@mentee) 
 	end
 
 	def create
-		@mentee = Mentee.find(params[:mentee_id])
-		@mentors = Mentor.all
-		@matches = @mentee.mentor_matches(@mentors)
+		@mentee =  Mentee.find(params[:mentee_id])
+		@match = @mentee.matches.new(mentor_id: params[:mentor], mentee_id: params[:mentee_id])
+		if @match.save
+			redirect_to mentee_match_path(id: @match.id)
+		end
 	end
+
 
 end

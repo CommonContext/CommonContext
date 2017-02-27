@@ -1,0 +1,13 @@
+<article class="xviews xappointments xshow">
+	<h2>Appointment</h2>
+	<% if @appointment %>
+		<ul>
+			<li> 
+				<%=	@appointment.datetime %>
+			</li>
+			<li> 
+				<%=	@appointment.location %>
+			</li>
+		</ul>
+	<% end %>
+</article>
