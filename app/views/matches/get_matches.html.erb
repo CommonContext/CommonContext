@@ -1,0 +1,13 @@
+<article class="xarticles xmatches xget-matches">
+	<h1>Mentee Matches</h1>
+		<% @mentor_matches.each do |a_match| %>
+			<ul>
+				<li> <%= a_match.first_name %> </li>
+				<%= form_for [@mentee, @match] do |f| %>
+				<%= hidden_field_tag(:mentee, @mentee.id) %>
+				<%= hidden_field_tag(:mentor, a_match.id) %>
+					<%= f.submit "Select Mentor", class: "select-mentor btn"%>
+				<% end %>
+			</ul>
+		<% end %>
+</article>

@@ -18,6 +18,9 @@ class MenteesController < ApplicationController
     end
   end
 
+  def show
+  end
+
    private
     def set_mentee
       @mentee = Mentee.find(params[:id])
