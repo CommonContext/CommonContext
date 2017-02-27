@@ -1,5 +1,6 @@
 class MenteesController < ApplicationController
   before_action :set_mentee, only: [:show, :edit, :update, :destroy]
+  before_action :set_auth
 
   def new
     @mentee = Mentee.new
@@ -39,7 +40,12 @@ class MenteesController < ApplicationController
                                     :orientation,
                                     :other,
                                     :location,
-                                    :interests)
+                                    :interests,
+                                    :user_id)
       
+  end
+
+  def set_auth
+    @auth = session[:omniauth] if session[:omniauth]
   end
 end

@@ -1,5 +1,6 @@
 class MentorsController < ApplicationController
-  before_action :find_mentor, only: [:show, :edit, :destroy]
+  before_action :find_mentor, only: [:show, :edit, :update, :destroy]
+  before_action :set_auth
 
   # def index
   #   @mentors = Mentor.all
@@ -15,7 +16,8 @@ class MentorsController < ApplicationController
 
   def create
     @mentor = Mentor.new(mentor_params)
-
+    puts "priting params"
+    p mentor_params
     respond_to do |format|
       if @mentor.save
         format.html { redirect_to @mentor, notice: 'Mentor was successfully created.' }
@@ -38,10 +40,10 @@ class MentorsController < ApplicationController
     end
   end
 
-  def destroy
-    @mentor.destroy
-    redirect_to root_path
-  end
+  # def destroy
+  #   @mentor.destroy
+  #   redirect_to root_path
+  # end
 
 
   private
@@ -65,7 +67,15 @@ class MentorsController < ApplicationController
                                   :location,
                                   :interests,
                                   :availability,
-                                  :other)
+                                  :other,
+                                  :user_id,
+                                  )
+  end
+
+  private
+
+  def set_auth
+    @auth = session[:omniauth] if session[:omniauth]
   end
 
 end
