@@ -47,7 +47,7 @@ class MentorsController < ApplicationController
   private
 
   def find_mentor
-    @mentor = Mentor.find_by(params[:id])
+    @mentor = Mentor.find(params[:id])
   end
 
   def mentor_params
