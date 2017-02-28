@@ -30,4 +30,18 @@
      box-shadow: 0 1px 0 0 #FFE349 !important;
    }
 
+/*years of experience field*/
+   .input-field input[type=number]:focus {
+   	/*darker yellow*/
+     border-bottom: 1px solid #FFE349 !important;
+     box-shadow: 0 1px 0 0 #FFE349 !important;
+   }
+
+/*availability*/
+   .input-field input[type=datetime-local]:focus {
+   	/*darker yellow*/
+     border-bottom: 1px solid #FFE349 !important;
+     box-shadow: 0 1px 0 0 #FFE349 !important;
+   }
+
    
