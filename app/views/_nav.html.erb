@@ -1,0 +1,17 @@
+  <nav class="nav-wrapper chambray">
+    <ul id="nav-home" class="left">
+      <li><%= link_to "Common Context", root_path %>
+      </li>
+    </ul>
+    <ul id="nav-mobile" class="right">
+      <% if current_user %>
+        <li id="nav-name"><%= link_to current_user.name, mentee_path(current_user) %></li>
+        <li id="nav-photo"><%= image_tag(@auth['info']['image'], class: 'img-responsive circle') %>
+        </li>
+        <li id= "nav-signout"><%= link_to "Sign Out", 'sign_out', method: :delete %></li>
+        <% else %>
+        <li id="nav-signin"><%= link_to "auth/linkedin" do%><%= image_tag('login.png', width: '70', height: '70') %><% end %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
