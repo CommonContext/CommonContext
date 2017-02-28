@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_auth
+  before_action :set_auth, :find_mentor
 
   def index
   end
@@ -9,9 +9,14 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @match = Match.find_by(params[:id])
-    @appointment = Appointment.create!(location: "Peets coffee", mentor_rating: 4, mentee_rating: 3, mentor_id: @match.mentor.id, mentee_id: @match.mentee.id, datetime: DateTime.now)
-    redirect_to  mentee_path(id: @match.mentee.id)
+    @appointment = Appointment.new(appointment_params)
+
+    if @appointment.save
+      redirect_to mentor_appointment_path([@mentor, @appointment])
+    else
+      render :new
+    end
+
   end
 
 
@@ -33,6 +38,17 @@ class AppointmentsController < ApplicationController
 
   def find_mentor
     @mentor = Mentor.find(params[:mentor_id])
+  end
+
+  def appointment_params
+    params.require(:appointment).permit(:datetime,
+                                  :location,
+                                  :email,
+                                  :mentor_id,
+                                  :mentee_id,
+                                  :mentor_rating,
+                                  :mentee_rating
+                                  )
   end
 
 end

@@ -13,8 +13,6 @@ class MentorsController < ApplicationController
 
   def create
     @mentor = Mentor.new(mentor_params)
-    puts "priting params"
-    p mentor_params
     respond_to do |format|
       if @mentor.save
         format.html { redirect_to @mentor, notice: 'Mentor was successfully created.' }
