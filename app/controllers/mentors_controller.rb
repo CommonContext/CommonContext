@@ -7,9 +7,6 @@ class MentorsController < ApplicationController
   #   render json: @mentors
   # end
 
-  def show 
-  end
-
   def new
     @mentor = Mentor.new
   end
@@ -28,17 +25,20 @@ class MentorsController < ApplicationController
       end
     end
   end
-
-  def edit
+  
+  def show 
   end
 
-  def update
-    if @mentor.update(mentor_params)
-      render json: @mentor
-    else
-      redirect_to 'edit'
-    end
-  end
+  # def edit
+  # end
+
+  # def update
+  #   if @mentor.update(mentor_params)
+  #     render json: @mentor
+  #   else
+  #     redirect_to 'edit'
+  #   end
+  # end
 
   # def destroy
   #   @mentor.destroy
@@ -48,34 +48,32 @@ class MentorsController < ApplicationController
 
   private
 
-  def find_mentor
-    @mentor = Mentor.find(params[:id])
-  end
+    def find_mentor
+      @mentor = Mentor.find(params[:id])
+    end
 
-  def mentor_params
-    params.require(:mentor).permit(:first_name,
-                                  :last_name,
-                                  :email,
-                                  :years_of_experience,
-                                  :current_company,
-                                  :current_industry,
-                                  :linkedin_link,
-                                  :race,
-                                  :gender,
-                                  :socioeconomic_background,
-                                  :orientation,
-                                  :location,
-                                  :interests,
-                                  :availability,
-                                  :other,
-                                  :user_id,
-                                  )
-  end
+    def mentor_params
+      params.require(:mentor).permit(:first_name,
+                                    :last_name,
+                                    :email,
+                                    :years_of_experience,
+                                    :current_company,
+                                    :current_industry,
+                                    :linkedin_link,
+                                    :race,
+                                    :gender,
+                                    :socioeconomic_background,
+                                    :orientation,
+                                    :location,
+                                    :interests,
+                                    :availability,
+                                    :other,
+                                    :user_id,
+                                    )
+    end
 
-  private
-
-  def set_auth
-    @auth = session[:omniauth] if session[:omniauth]
-  end
+    def set_auth
+      @auth = session[:omniauth] if session[:omniauth]
+    end
 
 end
