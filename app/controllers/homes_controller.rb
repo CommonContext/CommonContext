@@ -8,5 +8,4 @@ class HomesController < ApplicationController
     render "_show"
   end
 
-
 end
