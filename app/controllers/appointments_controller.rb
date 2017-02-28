@@ -10,29 +10,26 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
-
+    @appointment.mentor_id = @mentor.id
+    p @appointment
+    p appointment_params
     if @appointment.save
-      redirect_to mentor_appointment_path([@mentor, @appointment])
+      redirect_to mentor_path(@mentor)
     else
+      p "Not being saved"
       render :new
     end
-
   end
-
-
 
   def show
     @appointment = Appointment.find(params[:id])
   end
-
 
 # currently this is routing to mentee profile since we
 # are immediately booking the appointment. If we
 # require confirmation and this becomes a request, we will
 # move this logic to a custom action like #request_appointment
 # and only create the appointment on Mentor confirmation
-
-
 
   private
 
@@ -41,14 +38,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:datetime,
-                                  :location,
-                                  :email,
-                                  :mentor_id,
-                                  :mentee_id,
-                                  :mentor_rating,
-                                  :mentee_rating
-                                  )
+    params.require(:appointment).permit(:datetime, :location, :mentor_id)
   end
 
 end
