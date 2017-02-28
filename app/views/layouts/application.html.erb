@@ -15,7 +15,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  
+
 
   <%= favicon_link_tag 'favicon.ico' %>
 
@@ -54,7 +54,7 @@
   <% if current_user %>
     <div class="text-center">
       <h1>Welcome, <%= current_user.name %></h1>
-      <h4>Logged In with -> <strong><em><%= @auth['provider'].capitalize %></em></strong></h4>
+      <!-- <h4>Logged In with -> <strong><em><%= @auth['provider'].capitalize %></em></strong></h4> --> <%# This can probably be reomoved. %>
     </div>
   <% end %>
     <%= yield %>
