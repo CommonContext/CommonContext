@@ -1,0 +1,18 @@
+<section class="card">
+	<h3><%= image_tag(@auth['info']['image'], width: '70', height: '70', class: 'img-circle') %></li></h3>
+	<h3><%=@mentor.first_name + " " + @mentor.last_name%></h3>
+	<h4><%=@mentor.current_industry%></h4>
+	<h4><%=@mentor.location%></h4>
+		<ul>
+			<li>Current company: <%=@mentor.current_company%></li>
+			<li>Years of experience: <%=@mentor.years_of_experience%></li>
+			<li>Interests: <%=@mentor.interests%></li>
+			<li>Email: <%=@mentor.email%></li>
+			<li>Race: <%=@mentor.race%></li>
+			<li>Gender: <%=@mentor.gender %></li>
+			<li>Orientation: <%= @mentor.orientation %></li>
+			<li>Socio-economic background: <%=@mentor.socioeconomic_background%></li>
+		</ul>
+		<%= link_to "Edit", edit_mentor_path(@mentor), class: "btn" %>
+</section>
+

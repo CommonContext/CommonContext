@@ -7,9 +7,6 @@ class MentorsController < ApplicationController
   #   render json: @mentors
   # end
 
-  def show 
-  end
-
   def new
     @mentor = Mentor.new
   end
@@ -27,6 +24,9 @@ class MentorsController < ApplicationController
         format.json { render json: @mentor.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def show 
   end
 
   def edit
@@ -48,34 +48,32 @@ class MentorsController < ApplicationController
 
   private
 
-  def find_mentor
-    @mentor = Mentor.find(params[:id])
-  end
+    def find_mentor
+      @mentor = Mentor.find(params[:id])
+    end
 
-  def mentor_params
-    params.require(:mentor).permit(:first_name,
-                                  :last_name,
-                                  :email,
-                                  :years_of_experience,
-                                  :current_company,
-                                  :current_industry,
-                                  :linkedin_link,
-                                  :race,
-                                  :gender,
-                                  :socioeconomic_background,
-                                  :orientation,
-                                  :location,
-                                  :interests,
-                                  :availability,
-                                  :other,
-                                  :user_id,
-                                  )
-  end
+    def mentor_params
+      params.require(:mentor).permit(:first_name,
+                                    :last_name,
+                                    :email,
+                                    :years_of_experience,
+                                    :current_company,
+                                    :current_industry,
+                                    :linkedin_link,
+                                    :race,
+                                    :gender,
+                                    :socioeconomic_background,
+                                    :orientation,
+                                    :location,
+                                    :interests,
+                                    :availability,
+                                    :other,
+                                    :user_id,
+                                    )
+    end
 
-  private
-
-  def set_auth
-    @auth = session[:omniauth] if session[:omniauth]
-  end
+    def set_auth
+      @auth = session[:omniauth] if session[:omniauth]
+    end
 
 end
