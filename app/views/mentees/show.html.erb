@@ -11,9 +11,8 @@
 					<%= link_to "#{appointment.datetime}",mentee_appointment_path(appointment) %>
 				</li>
 			</ul>
-
 		<% end %>
-<!-- put else inside cone when uncommenting <%  %> -->
+	<% else %>
 		<h3>Match with a mentor</h3>
 		<%= link_to "Get Matches", get_matches_mentee_path(@mentee)%>
 	<% end %>
