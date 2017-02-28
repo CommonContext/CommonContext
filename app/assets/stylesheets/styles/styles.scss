@@ -1,0 +1,47 @@
+ h1	{
+	color: #364E93 !important;
+ }
+
+ /*form styling*/
+
+/*form label*/
+ .input-field label {
+ 	/*dark blue*/
+    color: #364E93 !important; 
+    font-size: 1.5rem !important;
+}
+
+/*form label for checkbox*/
+[type="checkbox"] + label {
+    font-size: 1.5rem !important;
+    color: #364E93 !important;
+}
+
+ /* label underline focus color */
+   .input-field input[type=text]:focus {
+   	/*darker yellow*/
+     border-bottom: 1px solid #FFE349 !important;
+     box-shadow: 0 1px 0 0 #FFE349 !important;
+   }
+
+    .input-field input[type=email]:focus {
+   	/*darker yellow*/
+     border-bottom: 1px solid #FFE349 !important;
+     box-shadow: 0 1px 0 0 #FFE349 !important;
+   }
+
+/*years of experience field*/
+   .input-field input[type=number]:focus {
+   	/*darker yellow*/
+     border-bottom: 1px solid #FFE349 !important;
+     box-shadow: 0 1px 0 0 #FFE349 !important;
+   }
+
+/*availability*/
+   .input-field input[type=datetime-local]:focus {
+   	/*darker yellow*/
+     border-bottom: 1px solid #FFE349 !important;
+     box-shadow: 0 1px 0 0 #FFE349 !important;
+   }
+
+   
