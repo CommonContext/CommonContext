@@ -11,8 +11,10 @@ User.connection.execute('ALTER SEQUENCE users_id_seq RESTART WITH 1')
 
 
 r = Mentor.create!(first_name: "Andrea", last_name: "James",email: "a@mail.com", years_of_experience: 5, current_company: "DBC", current_industry: "Education", linkedin_link: "linkedin.com/andrea", race: "Asian", gender: "female", socioeconomic_background: "lower", orientation: "bisexual", location: "SF Bay Area", interests: "golfing, karate, cooking", good_standing: true, availability: DateTime.now, other: "")
+
 r2 = Mentor.create!(first_name: "Chris", last_name: "Samson",email: "chris@mail.com", years_of_experience: 4, current_company: "Acme Inc.", current_industry: "FinTech", linkedin_link: "linkedin.com/chris", race: "White", gender: "male", socioeconomic_background: "middle", orientation: "straight", location: "SF Bay Area", interests: "tennis, wind-surfing", good_standing: true, availability: DateTime.now, other: "")
-r3 = Mentor.create!(first_name: "Andrea", last_name: "James",email: "a@mail.com", years_of_experience: 5, current_company: "DBC", current_industry: "Education", linkedin_link: "linkedin.com/andrea", race: "Asian", gender: "female", socioeconomic_background: "lower", orientation: "bisexual", location: "SF Bay Area", interests: "golfing, karate, cooking", good_standing: true, availability: DateTime.now, other: "")
+
+r3 = Mentor.create!(first_name: "Sarah", last_name: "Patterson",email: "sp@mail.com", years_of_experience: 7, current_company: "MedTech", current_industry: "Health", linkedin_link: "linkedin.com/andrea", race: "Asian", gender: "female", socioeconomic_background: "lower", orientation: "straight", location: "SF Bay Area", interests: "frisbee golf", good_standing: true, availability: DateTime.now, other: "")
 
 
 
