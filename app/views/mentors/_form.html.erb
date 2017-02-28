@@ -1,6 +1,15 @@
 <article class="xviews xmentor xnew card-panel hoverable">
   <%= form_for(@mentor) do |f| %>
 
+    <div class="row">
+      <div class="col s6">
+        <div class="input-field">
+          <%= f.label :availability %> <br>
+          <%= f.datetime_field :availability %>
+        </div>
+      </div>
+    </div>
+
     <div class="field">
       <div class="row">
         <div class="input-field col s3">
@@ -40,7 +49,7 @@
           </div>
         </div>
       </div>
-     
+
       <div class="row">
         <div class="col s6">
           <div class="input-field">
@@ -49,7 +58,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col s6">
           <div class="input-field">
@@ -69,7 +78,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col s6">
           <div class="input-field">
@@ -78,7 +87,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col s6">
           <div class="input-field">
@@ -87,7 +96,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col s6">
           <div class="input-field">
@@ -96,7 +105,7 @@
           </div>
         </div>
       </div>
-    
+
       <div class="row">
         <div class="col s6">
           <div class="input-field">
@@ -114,7 +123,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col s6">
           <div class="input-field">
@@ -124,26 +133,15 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col s6">
-          <div class="input-field">
-            <%= f.label :availability %> <br>
-            <%= f.datetime_field :availability %>
-          </div>
-        </div>
-      </div>
-
-
     </div>
-      
-    <%= user = User.find_by(uid: @auth['uid']) %>
-    <%= user.name %>
-    <%= f.hidden_field :user_id, value: user.id %>
 
-      <div class="xbuttons">
+    <% user = User.find_by(uid: @auth['uid']) %>
+    <% user.name %>
+    <% f.hidden_field :user_id, value: user.id %>
+
+      <div class="btn">
         <%= f.submit %>
       </div>
 
   <% end %>
 </article>
-
