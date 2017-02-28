@@ -72,8 +72,5 @@ class MentorsController < ApplicationController
                                     )
     end
 
-    def set_auth
-      @auth = session[:omniauth] if session[:omniauth]
-    end
 
 end
