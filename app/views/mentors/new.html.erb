@@ -1,5 +1,7 @@
 <h2>Enter your details</h2>
 
+<% set_user_type("mentor") %>
+
 <%= render 'form', mentor: @mentor %>
 
 <%= link_to 'Back', mentors_path %>

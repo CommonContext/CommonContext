@@ -1,5 +1,5 @@
-      	
 <article class="xviews xmentors xshow container row">  
+	<% if current_user && user_type == "mentor" %>
 	<h1>My Profile</h1>
 	<section class="col s5">  
 			<%= render 'mentor_profile' %>
@@ -20,7 +20,11 @@
 			<!-- maybe something here to show pending matches that need scheduling confirmation -->
 		<% end %>
 	</section>
+	<% else %>
+	<p> This profile is private. </p>
+	<% end %>
 </article>
+
    
       
 
