@@ -40,7 +40,7 @@
             <li>Signed in as: <%=current_user.name %> - <%= image_tag(@auth['info']['image'], width: '50', height: '50', class: 'img-circle') %></li>
             <li><%= link_to "Sign Out", 'sign_out', method: :delete %></li>
             <% else %>
-            <li><%= link_to "auth/linkedin" do%><%= image_tag('linkedIn.png', width: '100', height: '100', class: 'img-circle') %><% end %></li>
+            <li><%= link_to "auth/linkedin" do%><%= image_tag('login.png', width: '70', height: '70') %><% end %></li>
           <% end %>
         </ul>
       </div>
