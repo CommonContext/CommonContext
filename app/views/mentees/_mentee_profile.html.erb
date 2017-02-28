@@ -1,0 +1,19 @@
+<section class="card hoverable">
+	<h3><%= image_tag(@auth['info']['image'], width: '70', height: '70', class: 'img-circle') %></li></h3>
+	<h3><%=@mentee.first_name + " " + @mentee.last_name%></h3>
+	<h4><%=@mentee.location%></h4>
+		<ul>
+			<li>Demographic preference: <%=@mentee.mentor_demographic_pref%></li>
+			<li>Interests: <%=@mentee.interests%></li>
+			<li>Email: <%=@mentee.email%></li>
+			<li>Objective: <%=@mentee.objective%></li>
+			<li>LinkedIn Link: <span><%= link_to @mentee.linkedin_link, "https://#{@mentee.linkedin_link}"%></li>
+			<li>Race: <%=@mentee.race%></li>
+			<li>Gender: <%=@mentee.gender %></li>
+			<li>Orientation: <%= @mentee.orientation %></li>
+			<li>Socio-economic background: <%=@mentee.socioeconomic_background%></li>
+		</ul>
+		<%= link_to "Edit", edit_mentee_path(@mentee), class: "btn" %>
+</section>
+
+
