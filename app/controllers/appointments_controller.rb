@@ -8,11 +8,9 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
   end
 
-  def create
+  def create # This is needs to be shelved until we get he mentee matching flow working
     @appointment = Appointment.new(appointment_params)
     @appointment.mentor_id = @mentor.id
-    p @appointment
-    p appointment_params
     if @appointment.save
       redirect_to mentor_path(@mentor)
     else
