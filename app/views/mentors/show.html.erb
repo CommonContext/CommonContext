@@ -1,19 +1,21 @@
-      	
-   		<article class="xviews xmentors xshow container row">  
+
+   		<article class="xviews xmentors xshow container row">
 				<h2>My Profile</h2>
-			<section class="col s5">  
+			<section class="col s5">
       			<%= render 'mentor_profile' %>
      		</section>
    			<section class="col s7 center">
 				<% if @mentor.appointments.any? %>
 					<h3>Upcoming Appointments</h3>
+          <!-- // Make a link to create a new appointment -->
+          <%= link_to %>
 					<% @mentor.appointments.each do |appointment| %>
 						<ul>
 							<li>
 								<%= link_to "#{appointment.datetime}",mentor_appointment_path(appointment) %>
-							</li>	
+							</li>
 						</ul>
-						
+
 					<% end %>
 			<!-- put else inside cone when uncommenting <%  %> -->
 					<h3>View pending matches</h3>
@@ -21,8 +23,6 @@
 				<% end %>
 			</section>
 		</article>
-   
-      
 
 
 
@@ -30,4 +30,3 @@
 
 <!-- include private info, ie upcoming appts and pending matches -->
 <!-- render partial with public info - photo, industry, title, etc -->
-
