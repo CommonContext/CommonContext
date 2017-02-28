@@ -3,6 +3,7 @@ class MenteesController < ApplicationController
   before_action :set_auth
 
   def new
+    
     @mentee = Mentee.new
   end
 
