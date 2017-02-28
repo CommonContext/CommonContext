@@ -42,9 +42,6 @@ class HomesController < ApplicationController
   end
 
   private
-  def set_auth
-    @auth = session[:omniauth] if session[:omniauth]
-  end
 
   helper_method :find_mentor_uids, :find_mentee_uids
 end

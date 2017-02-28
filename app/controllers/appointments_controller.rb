@@ -1,4 +1,6 @@
 class AppointmentsController < ApplicationController
+  before_action :set_auth
+
   def show
     @appointment = Appointment.find(params[:id])
   end
