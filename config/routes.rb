@@ -20,8 +20,8 @@ Rails.application.routes.draw do
 
   delete 'sign_out', to: 'sessions#destroy', as: 'sign_out'
   
-  # delete 'mentors/sign_out', to: 'sessions#destroy', as: 'sign_out_2'
-  # delete 'mentees/sign_out', to: 'sessions#destroy', as: 'sign_out_1'
+  delete 'mentors/sign_out', to: 'sessions#destroy', as: 'sign_out_2'
+  delete 'mentees/sign_out', to: 'sessions#destroy', as: 'sign_out_1'
   # delete 'mentors/#{params[:id]}', to: 'sessions#destroy', as: 'sign_out_3'
   # delete 'mentees/#{params[:id]}', to: 'sessions#destroy', as: 'sign_out_4'
   # http://localhost:3000/mentors/10#!
