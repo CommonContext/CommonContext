@@ -1,0 +1,149 @@
+<article class="xviews xmentor xnew card-panel hoverable">
+  <%= form_for(@mentor) do |f| %>
+
+    <div class="field">
+      <div class="row">
+        <div class="input-field col s3">
+          <%= f.label :first_name, class: "active"%>
+          <%= f.text_field :first_name, :value => @auth['info']['first_name'] %><br>
+        </div>
+        <div class="input-field col s3">
+          <%= f.label :last_name, class: "active" %>
+          <%= f.text_field :last_name, :value => @auth['info']['last_name'] %><br>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :email, class: "active" %>
+            <%= f.email_field :email, :value => @auth['info']['email'] %><br>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+             <%= f.label :years_of_experience %>
+             <%= f.number_field :years_of_experience %>
+          </div>
+        </div>
+      </div>
+
+       <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+             <%= f.label :current_company, class: "active" %>
+             <%= f.text_field :current_company, :value => @auth['info']['description'] %>
+          </div>
+        </div>
+      </div>
+     
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :current_industry, class: "active" %>
+            <%= f.text_field :current_industry %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :linkedin_link, class: "active" %>
+            <%= f.text_field :linkedin_link, :value => @auth['info']['urls']['public_profile'] %>
+          </div>
+        </div>
+      </div>
+
+    <div class="diversity">
+
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :race, class: "active" %>
+            <%= f.text_field :race %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :gender, class: "active" %>
+            <%= f.text_field :gender %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :socioeconomic_background, class: "active" %>
+            <%= f.text_field :socioeconomic_background %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :orientation, class: "active" %>
+            <%= f.text_field :orientation %>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :other %>
+            <%= f.text_field :other %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :location, class: "active" %>
+            <%= f.text_field :location %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :interests, class: "active" %>
+            <%= f.text_field :interests %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s6">
+          <div class="input-field">
+            <%= f.label :availability %> <br>
+            <%= f.datetime_field :availability %>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+      
+    <%= user = User.find_by(uid: @auth['uid']) %>
+    <%= user.name %>
+    <%= f.hidden_field :user_id, value: user.id %>
+
+      <div class="xbuttons">
+        <%= f.submit %>
+      </div>
+
+  <% end %>
+</article>
+
