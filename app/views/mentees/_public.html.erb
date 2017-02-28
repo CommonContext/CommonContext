@@ -1,0 +1,8 @@
+<p>First Name: <span><%= @mentee.first_name %></span></p>
+<p>Last Name: <span><%= @mentee.last_name %></span></p>
+<p>Email: <span><%= @mentee.email %></span></p>
+<p>Objective: <span><%= @mentee.objective %></span></p>
+<p>Mentor Demographic Preference: <span><%= @mentee.mentor_demographic_pref %></span></p>
+<p>LinkedIn Link: <span><%= link_to @mentee.linkedin_link, "https://#{@mentee.linkedin_link}"%></span></p>
+<p>Location: <span><%= @mentee.location %></span></p>
+<p>Interests: <span><%= @mentee.interests %></span></p>
