@@ -1,5 +1,5 @@
 class MatchesController < ApplicationController
-	
+	before_action :set_auth
 	def show
 		@match = Match.find(params[:id])
 		@mentee = Mentee.find(params[:mentee_id])
@@ -18,6 +18,10 @@ class MatchesController < ApplicationController
 			redirect_to mentee_match_path(id: @match.id)
 		end
 	end
-
+  
+  private
+  def set_auth
+    @auth = session[:omniauth] if session[:omniauth]
+  end
 
 end
