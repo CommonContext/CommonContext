@@ -29,16 +29,16 @@ class MentorsController < ApplicationController
   def show 
   end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  #   if @mentor.update(mentor_params)
-  #     render json: @mentor
-  #   else
-  #     redirect_to 'edit'
-  #   end
-  # end
+  def update
+    if @mentor.update(mentor_params)
+      render json: @mentor
+    else
+      redirect_to 'edit'
+    end
+  end
 
   # def destroy
   #   @mentor.destroy
