@@ -17,4 +17,24 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.create!(location: "Peets coffee", mentor_rating: 4, mentee_rating: 3, mentor_id: @match.mentor.id, mentee_id: @match.mentee.id, datetime: DateTime.now)
     redirect_to  mentee_path(id: @match.mentee.id)
   end
+
+  def edit
+    if session[:user_id] != nil
+      @appointment = Appointment.find(params[:id])
+    else
+      redirect_to login_url
+    end
+  end
+
+  def update
+    if session[:user_id] != @appointment.mentor_id
+      @user = User.find(session[:user_id])
+      @appointment.update_attributes(student: @user)
+      redirect_to appointment_path(@appointment)
+    else
+      @appointment.update_attributes(appointment_params)
+      redirect_to appointment_path(@appointment)
+    end
+  end
+  
 end
