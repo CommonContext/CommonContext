@@ -1,9 +1,8 @@
-<article class="xviews xmentees xshow">
-	<h2>My Profile</h2>
-	<%= link_to 'Edit', edit_mentee_path(@mentee) %>
-
-
-	<%= render 'public' %>
+<article class="xviews xmentees xshow container row">
+	<h1>My Profile</h1>
+	<section class="col s5">  
+      		<%= render 'mentee_profile' %>
+    </section>
 
 	<% if @mentee.appointments.any? %>
 		<h3>Upcoming Appointments</h3>
@@ -19,3 +18,5 @@
 		<%= link_to "Get Matches", get_matches_mentee_path(@mentee)%>
 	<% end %>
 </article>
+
+
