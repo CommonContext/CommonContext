@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   delete 'auth/signout', to: 'sessions#destroy'
 
+
+  get 'finish-registration', to: 'homes#finish_registration'
+
 end
