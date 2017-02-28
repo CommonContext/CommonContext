@@ -18,8 +18,7 @@ class MatchesController < ApplicationController
 			redirect_to mentee_match_path(id: @match.id)
 		end
 	end
-  
-  private
+
 
 
 end
