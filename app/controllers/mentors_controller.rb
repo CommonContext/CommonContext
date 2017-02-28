@@ -25,18 +25,28 @@ class MentorsController < ApplicationController
       end
     end
   end
-  
-  def show 
+
+  def show
   end
 
   def edit
   end
 
   def update
-    if @mentor.update(mentor_params)
-      render json: @mentor
-    else
-      redirect_to 'edit'
+    # if @mentor.update(mentor_params)
+    #   render json: @mentor
+    # else
+    #   redirect_to 'edit'
+    # end
+
+    respond_to do |format|
+      if @mentor.update(mentor_params)
+        format.html { redirect_to @mentor }
+        format.json { render :show, status: :ok, location: @mentor }
+      else
+        format.html { render :edit }
+        format.json { render json: @mentor.errors, status: :unprocessable_entity }
+      end
     end
   end
 
