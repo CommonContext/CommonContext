@@ -3,25 +3,25 @@
 
     <div class="field">
       <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, :value => @auth['info']['first_name']%>
 
       <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
+      <%= f.text_field :last_name, :value => @auth['info']['last_name'] %>
 
       <%= f.label :email; %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, :value => @auth['info']['dharinimadan@gmail.com'] %>
 
       <%= f.label :years_of_experience %>
       <%= f.number_field :years_of_experience %>
 
       <%= f.label :current_company %>
-      <%= f.text_field :current_company %>
+      <%= f.text_field :current_company, :value => @auth['info']['description'] %>
 
       <%= f.label :current_industry %>
       <%= f.text_field :current_industry %>
 
       <%= f.label :linkedin_link %>
-      <%= f.text_field :linkedin_link %>
+      <%= f.text_field :linkedin_link, :value => @auth['info']['urls']['public_profile'] %>
 
       <div class="diversity">
 
