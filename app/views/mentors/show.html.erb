@@ -5,6 +5,7 @@
       			<%= render 'mentor_profile' %>
      		</section>
    			<section class="col s7 center">
+       
 				<% if @mentor.appointments.any? %>
 					<h3>Upcoming Appointments</h3>
 					<% @mentor.appointments.each do |appointment| %>

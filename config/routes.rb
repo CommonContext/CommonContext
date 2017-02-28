@@ -3,7 +3,7 @@ Rails.application.routes.draw do
    #TODO: Determine if we need to limit any of these routes
 
   resources :mentors, except: [:destroy] do
-    resources :appointments, only: [:show]
+    resources :appointments
   end
 
   resources :mentees, only: [:create, :new, :edit, :update, :show] do 
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :matches, only: [:create, :show] do
       get 'schedule' => 'appointments#create'
     end
-    resources :appointments, only: [:show]
+    resources :appointments
   end
 
 

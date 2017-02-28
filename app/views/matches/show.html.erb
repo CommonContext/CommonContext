@@ -4,6 +4,7 @@
 		<p>
 			<%= @match.mentor.first_name %>
 		</p>
-		<h3>Schedule an Appointnment</h3>
-		<%= link_to "Schedule Appointment", mentee_match_schedule_path(match_id: @match.id)%>
+		<h3>Schedule an Appointment</h3>
+		<%# link_to "Schedule Appointment", mentee_match_schedule_path(match_id: @match.id)%>
+    <%= link_to "Schedule Appointment", mentee_match_schedule_path(match_id: @match.id)%>
 </article>
