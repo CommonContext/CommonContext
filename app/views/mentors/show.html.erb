@@ -5,10 +5,10 @@
       			<%= render 'mentor_profile' %>
      		</section>
    			<section class="col s7 center">
+
+        <%= link_to "Create an appointment", new_mentor_appointment_path(@mentor)%>
 				<% if @mentor.appointments.any? %>
 					<h3>Upcoming Appointments</h3>
-          <!-- // Make a link to create a new appointment -->
-          <%= link_to %>
 					<% @mentor.appointments.each do |appointment| %>
 						<ul>
 							<li>
