@@ -1,20 +1,22 @@
 <article class="xviews xmatches xshow">
-	<h2>My Match</h2>
-		<!-- TODO put some details about the match here -->
-		<p>
-			<%= @match.mentor.first_name %>
-		</p>
-		<h3>Schedule an Appointnment</h3>
+	<h2>My Match: <%= @match.mentor.first_name + " " + @match.mentor.last_name %></h2>
 
-		<% if @appointments %>
-			<% @appointments.each do |appointment| %>
-				<!-- TODO render appt partial  -->
-				<!-- <%# .strftime("%B %e, %Y at %I:%M %p")  %> -->
-				<p><%= appointment.datetime %></p>
-				<%= form_for appointment, url: mentee_match_schedule_path(match_id: @match.id, id: appointment.id) do |f| %>
-					<%= f.submit "Book Appointment", class: "btn" %>
-				<% end %>
-			<% end %>
-		<% end %>
+		<h4>Some of <%= @match.mentor.first_name%>'s details:</h4>
+		<ul>
+			<li>Years of experience: <%=@match.mentor.years_of_experience %></li>
+			<li>LinkedIn Profile: <span><%= link_to @match.mentor.linkedin_link, "#{@match.mentor.linkedin_link}"%></li>
+			<li>Email: <%=@match.mentor.email %></li>
+			<li>Race / Ethnicity: <%=@match.mentor.race %></li>
+			<li>Gender: <%=@match.mentor.gender %></li>
+			<li>Orientation: <%=@match.mentor.orientation %></li>
+			<li>Socioeconomic background: <%=@match.mentor.socioeconomic_background %></li>
+			<li>Primary Location: <%=@match.mentor.location %></li>
+			<li>Interests: <%=@match.mentor.interests %></li>
+			<li>This mentor is currently in good standing: <%=@match.mentor.good_standing %></li>
+		</ul>
+
+		<!-- TODO render appt partial  -->
+		<%= render 'appointments' %>
+
 		<!-- TODO nice to have: make appt request if none served -->
 </article>

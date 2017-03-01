@@ -2,13 +2,10 @@
 	<h1>Mentee Matches</h1>
 				<ul class="row">
 				<% @mentor_matches.each do |a_match| %>
-					<div class="col s4 card mentor-match"> 
+					<div class="col s4 card mentor-match">
 						<h3> <%= a_match.first_name + " " + a_match.last_name %> </h3>
 						<h4><%=a_match.current_industry%></h4>
 						<h4><%=a_match.current_company%></h4>
-						<li>Years of experience: <%=a_match.years_of_experience%></li>
-						<li>Interests: <%=a_match.interests%></li>
-						<li>Email: <%=a_match.email%></li>
 						<%= form_for [@mentee, @match] do |f| %>
 						<%= hidden_field_tag(:mentee, @mentee.id) %>
 						<%= hidden_field_tag(:mentor, a_match.id) %>
@@ -18,4 +15,3 @@
 				<% end %>
 				</ul>
 </article>
-

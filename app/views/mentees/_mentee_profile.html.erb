@@ -7,13 +7,11 @@
 			<li>Interests: <%=@mentee.interests%></li>
 			<li>Email: <%=@mentee.email%></li>
 			<li>Objective: <%=@mentee.objective%></li>
-			<li>LinkedIn Link: <span><%= link_to @mentee.linkedin_link, "https://#{@mentee.linkedin_link}"%></li>
+			<li>LinkedIn Profile: <span><%= link_to @mentee.linkedin_link, "https://#{@mentee.linkedin_link}"%></li>
 			<li>Race: <%=@mentee.race%></li>
 			<li>Gender: <%=@mentee.gender %></li>
 			<li>Orientation: <%= @mentee.orientation %></li>
-			<li>Socio-economic background: <%=@mentee.socioeconomic_background%></li>
+			<li>Socioeconomic background: <%=@mentee.socioeconomic_background%></li>
 		</ul>
 		<%= link_to "Edit", edit_mentee_path(@mentee), class: "btn" %>
 </section>
-
-

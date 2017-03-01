@@ -1,0 +1,15 @@
+<h3>Schedule an Appointnment</h3>
+
+<% if @appointments %>
+  <% @appointments.each do |appointment| %>
+
+    <% if !appointment.datetime.nil? %>
+      <p><%= appointment.datetime.strftime("%B %e, %Y at %I:%M %p") %></p>
+    <% else %>
+      <p><%= appointment.datetime %></p>
+    <% end %>
+    <%= form_for appointment, url: mentee_match_schedule_path(match_id: @match.id, id: appointment.id) do |f| %>
+      <%= f.submit "Book Appointment", class: "btn" %>
+    <% end %>
+  <% end %>
+<% end %>
