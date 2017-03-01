@@ -54,20 +54,14 @@ class AppointmentsController < ApplicationController
     @user_appointments = []
 
     if user_id != nil && user_type == "mentor"
-      puts "mentorrrrrr"
       mentor = Mentor.find_by(user_id: session[:user_id])
-      appointments = Appointment.where(mentor_id: mentor)
-      p user_id
+      appointments = Appointment.where(mentor_id: mentor.id)
       appointments.each do |appointment|
         @user_appointments << {id: appointment.id, title: "Mentor Apointment Title", start: appointment.datetime}
       end
     elsif user_id !=nil && user_type == "mentee"
-      puts "menteeeeee"
-      p current_user
-      p user_id
       mentee = Mentee.find_by(user_id: session[:user_id])
-      puts "mentee is #{mentee.id}"
-      appointments = Appointment.where(mentee_id: mentee)
+      appointments = Appointment.where(mentee_id: mentee.id)
       appointments.each do |appointment|
         puts appointment.datetime
         @user_appointments << {id: appointment.id, title: "Mentee Apointment Title", start: appointment.datetime}
@@ -77,8 +71,6 @@ class AppointmentsController < ApplicationController
     respond_to do |format|
       format.json { render json: @user_appointments, status: :ok }
     end
-    puts "*************************************"
-    p @user_appointments
   end
 
 # currently this is routing to mentee profile since we
