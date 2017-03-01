@@ -9,6 +9,7 @@
 		<% if @appointments %>
 			<% @appointments.each do |appointment| %>
 				<!-- TODO render appt partial  -->
+				<!-- <%# .strftime("%B %e, %Y at %I:%M %p")  %> -->
 				<p><%= appointment.datetime %></p>
 				<%= form_for appointment, url: mentee_match_schedule_path(match_id: @match.id, id: appointment.id) do |f| %>
 					<%= f.submit "Book Appointment", class: "btn" %>
@@ -17,4 +18,3 @@
 		<% end %>
 		<!-- TODO nice to have: make appt request if none served -->
 </article>
-
