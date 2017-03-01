@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_auth #, :find_mentor
+  before_action :set_auth, :find_mentor, only: [:new, :create]
 
   def index
   end
