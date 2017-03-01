@@ -10,9 +10,9 @@
 			<h3>Upcoming Appointments</h3>
 			<% @mentor.appointments.each do |appointment| %>
 				<ul>
-					<li>
-						<%= link_to "#{appointment.datetime.strftime("%B %e, %Y at %I:%M %p")}", mentor_appointment_path(id: appointment.id, mentor_id: @mentor.id) %> <%# with #{appointment.mentee.first_name + " " + appointment.mentee.last_name}   We should be able to clean this up.%> 
 
+					<li>
+						<%= link_to "#{appointment.datetime.strftime("%B %e, %Y at %I:%M %p")}", mentor_appointment_path(@mentor, appointment) %> <%# with #{appointment.mentee.first_name + " " + appointment.mentee.last_name}   We should be able to clean this up.%>
 					</li>
 				</ul>
 

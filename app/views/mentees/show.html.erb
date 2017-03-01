@@ -10,7 +10,7 @@
 		<% @mentee.appointments.each do |appointment| %>
 				<li>Appointment with <%= appointment.mentor.first_name + " " + appointment.mentor.last_name %>:</li>
 				<li>
-					<%= link_to "#{appointment.datetime.strftime("%B %e, %Y at %I:%M %p")}",mentee_appointment_path(appointment) %>
+					<%= link_to "#{appointment.datetime.strftime("%B %e, %Y at %I:%M %p")}", mentee_appointment_path(@mentee, appointment) %> <%# id: appointment.id, mentor_id: appointment.mentor.id%>
 				</li>
 		<% end %>
 	</ul>
