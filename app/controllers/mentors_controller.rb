@@ -12,9 +12,6 @@ class MentorsController < ApplicationController
   end
 
   def create
-    p "%*@#{}" * 50
-    p params
-    p mentor_params
     @mentor = Mentor.new(mentor_params)
     @mentor.user_id = User.find_by(uid: @auth['uid']).id
     respond_to do |format|
