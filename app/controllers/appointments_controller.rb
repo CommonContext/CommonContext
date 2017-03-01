@@ -8,7 +8,8 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
   end
 
-  def create # This is needs to be shelved until we get he mentee matching flow working
+  def create 
+    # This is needs to be shelved until we get he mentee matching flow working
     @appointment = Appointment.new(appointment_params)
     @appointment.mentor_id = @mentor.id
     if @appointment.save
