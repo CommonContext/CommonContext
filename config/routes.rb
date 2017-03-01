@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :mentees, only: [:create, :new, :edit, :update, :show] do
   	get 'get-matches' => 'matches#get_matches', :on => :member
     resources :matches, only: [:create, :show] do
-      get 'schedule' => 'appointments#create'
+      patch 'schedule' => 'appointments#schedule'
     end
     resources :appointments
   end

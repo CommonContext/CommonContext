@@ -8,6 +8,7 @@ class MenteesController < ApplicationController
 
   def create
     @mentee = Mentee.new(mentee_params)
+    @mentee.user_id = User.find_by(uid: @auth['uid']).id        
     respond_to do |format|
       if @mentee.save
         format.html { redirect_to @mentee }
@@ -52,8 +53,7 @@ end
                                     :orientation,
                                     :other,
                                     :location,
-                                    :interests,
-                                    :user_id)
+                                    :interests)
 
   end
 
