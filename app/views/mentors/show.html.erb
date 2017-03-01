@@ -1,35 +1,30 @@
-      	
-   		<article class="xviews xmentors xshow container row">  
-				<h2>My Profile</h2>
-			<section class="col s5">  
-      			<%= render 'mentor_profile' %>
-     		</section>
-   			<section class="col s7 center">
-       <%= link_to "create appointment", new_mentor_appointment_path(params[:id]) %>
+<article class="xviews xmentors xshow container row">  
+	<% if current_user && user_type == "mentor" %>
+	<h3>My Profile</h3>
+	<section class="col s5">  
+			<%= render 'mentor_profile' %>
+		</section>
+		<section class="col s7 center">
+      <%= link_to "Set your availability", edit_mentor_path(@mentor) %> <%#  %>
+		<% if @mentor.appointments.any? %>
+			<h3>Upcoming Appointments</h3>
+			<% @mentor.appointments.each do |appointment| %>
+				<ul>
+					<li>
+						<%= link_to "#{appointment.datetime}", mentor_appointment_path(@mentor) %>
+					</li>
+				</ul>
 
-				<% if @mentor.appointments.any? %>
-					<h3>Upcoming Appointments</h3>
-					<% @mentor.appointments.each do |appointment| %>
-						<ul>
-							<li>
-								<%= link_to "#{appointment.datetime}",mentor_appointment_path(appointment) %>
-							</li>	
-						</ul>
-						
-					<% end %>
-			<!-- put else inside cone when uncommenting <%  %> -->
-					<h3>View pending matches</h3>
-					<!-- maybe something here to show pending matches that need scheduling confirmation -->
-				<% end %>
-			</section>
-		</article>
-   
-      
-
-
-
-
+			<% end %>
+	<!-- put else inside cone when uncommenting <%  %> -->
+			<h3>View pending matches</h3>
+			<!-- maybe something here to show pending matches that need scheduling confirmation -->
+		<% end %>
+	</section>
+	<% else %>
+	<p> This profile is private. </p>
+	<% end %>
+</article>
 
 <!-- include private info, ie upcoming appts and pending matches -->
 <!-- render partial with public info - photo, industry, title, etc -->
-
