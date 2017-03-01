@@ -18,7 +18,7 @@ def route_user
       set_user_type("mentee")
       redirect_to mentee_url(id: mentee_id)
     else
-      redirect_to finish_registration_path
+     redirect_to finish_registration_path
     end
 
   end

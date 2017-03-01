@@ -3,6 +3,7 @@ class MatchesController < ApplicationController
 	def show
 		@match = Match.find(params[:id])
 		@mentee = Mentee.find(params[:mentee_id])
+		@appointments = available_appointments(@match)
 	end	
 
 	def get_matches

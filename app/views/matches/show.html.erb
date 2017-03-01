@@ -5,5 +5,16 @@
 			<%= @match.mentor.first_name %>
 		</p>
 		<h3>Schedule an Appointnment</h3>
-		<%= link_to "Schedule Appointment", mentee_match_schedule_path(match_id: @match.id)%>
+
+		<% if @appointments %>
+			<% @appointments.each do |appointment| %>
+				<!-- TODO render appt partial  -->
+				<p><%= appointment.datetime %></p>
+				<%= form_for appointment, url: mentee_match_schedule_path(match_id: @match.id, id: appointment.id) do |f| %>
+					<%= f.submit "Book Appointment", class: "btn" %>
+				<% end %>
+			<% end %>
+		<% end %>
+		<!-- TODO nice to have: make appt request if none served -->
 </article>
+

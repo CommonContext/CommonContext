@@ -135,11 +135,6 @@
 
     </div>
 
-      
-    <% user = User.find_by(uid: @auth['uid']) %>
-    <% user.name %>
-    <% f.hidden_field :user_id, value: user.id %>
-
       <div class="xbuttons">
         <%= f.submit "Save", class: "btn" %>
       </div>

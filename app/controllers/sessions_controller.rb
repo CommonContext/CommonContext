@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     user = User.sign_in_from_omniauth(auth)
     session[:user_id] = user.id
     route_user
+    
   end
 
   def destroy
