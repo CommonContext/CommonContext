@@ -12,7 +12,11 @@ class MentorsController < ApplicationController
   end
 
   def create
+    p "%*@#{}" * 50
+    p params
+    p mentor_params
     @mentor = Mentor.new(mentor_params)
+    @mentor.user_id = User.find_by(uid: @auth['uid']).id
     respond_to do |format|
       if @mentor.save
         format.html { redirect_to @mentor, notice: 'Mentor was successfully created.' }
@@ -36,7 +40,6 @@ class MentorsController < ApplicationController
     # else
     #   redirect_to 'edit'
     # end
-
     respond_to do |format|
       if @mentor.update(mentor_params)
         format.html { redirect_to @mentor }
@@ -75,8 +78,7 @@ class MentorsController < ApplicationController
                                     :location,
                                     :interests,
                                     :availability,
-                                    :other,
-                                    :user_id,
+                                    :other
                                     )
     end
 

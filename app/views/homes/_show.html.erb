@@ -1,4 +1,8 @@
-<ul>
-	<li><%= link_to "Sign up as Mentor", new_mentor_path %></li>
-	<li><%= link_to "Sign up as Mentee", new_mentee_path %></li>	
-</ul>
+<% if current_user %>
+	<ul>
+		<li><%= link_to "Sign up as Mentor", new_mentor_path %></li>
+		<li><%= link_to "Sign up as Mentee", new_mentee_path %></li>	
+	</ul>
+<% else %>
+<p>Oops! You've already finished registration.</p>
+<% end %>

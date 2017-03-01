@@ -23,7 +23,13 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
-  def update
+  def schedule
+    @appointment = Appointment.find(params[:id])
+    if @appointment.update(mentee_id: params[:mentee_id])
+      redirect_to mentee_path(id: params[:mentee_id])
+    else
+      redirect_to mentee_match(mentee_id: params[:mentee_id], id: params[:match_id])
+    end
 
   end
 
@@ -40,7 +46,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:datetime, :location, :mentor_id)
+    params.require(:appointment).permit(:datetime, :location, :mentor_id, :mentee_id)
   end
 
 end

@@ -9,8 +9,8 @@
           <li id="nav-profile"><%= link_to "#{current_user.name}", mentor_path(get_user) %>
         <% elsif user_type == "mentee"  && get_user%>
           <li id="nav-profile"><%= link_to "#{current_user.name}", mentee_path(get_user) %>
-        <% else %>
-          <li id="nav-profile"><%= link_to "#{current_user.name}", finish_registration_path %>
+        <% elsif !current_user.id %>
+          <li id="nav-profile"><%= link_to "#{current_user.name}", '/finish_registration' %>
         <% end %>       
         <li id="nav-photo"><%= image_tag(@auth['info']['image'], class: 'img-responsive circle') %>
         </li>
