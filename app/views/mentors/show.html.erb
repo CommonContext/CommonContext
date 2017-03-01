@@ -1,29 +1,38 @@
 <article class="xviews xmentors xshow container row">
 	<% if current_user && user_type == "mentor" && get_user.id == @mentor.id %>
 	<h3>My Profile</h3>
-	<section class="col s5">
+		<section class="col s5">
 			<%= render 'mentor_profile' %>
 		</section>
-		<section class="col s7 center">
-      <%= link_to "Create Appointment", new_mentor_appointment_path(@mentor) %>
-		<% if @mentor.appointments.any? %>
-			<h3>Upcoming Appointments</h3>
-			<% @mentor.appointments.each do |appointment| %>
-				<ul>
-					<li>
-						<%= link_to "#{appointment.datetime}", mentor_appointment_path(id: appointment.id, mentor_id: @mentor.id) %> <%# We should be able to clean this up.%>
+		<section class="col s7 center card hoverable">
+	    <h5><%= link_to "Add an appointment time", new_mentor_appointment_path(@mentor) %></h5>
+			<% if @mentor.appointments.any? %>
+				<h3>Upcoming Meetings</h3>
+				<% @mentor.appointments.each do |appointment| %>
+					<% if !appointment.mentee.nil?%>
+						<ul>
+							<li>
+								<%= link_to "#{appointment.datetime.strftime("%B %e, %Y at %I:%M %p")}", mentor_appointment_path(@mentor, appointment) %> <%# with #{appointment.mentee.first_name + " " + appointment.mentee.last_name}   We should be able to clean this up.%>
+							</li>
+						</ul>
+					<% end %>
+				<% end %>
 
-					</li>
-				</ul>
-
+				<h3>Available Appointment Times</h3>
+				<% @mentor.appointments.each do |appointment| %>
+					<% if appointment.mentee.nil?%>
+						<ul>
+							<li>
+								<%= appointment.datetime.strftime("%B %e, %Y at %I:%M %p") %>
+							</li>
+						</ul>
+					<% end %>
+				<% end %>
+				<!-- maybe something here to show pending matches that need scheduling confirmation -->
 			<% end %>
-	<!-- put else inside cone when uncommenting <%  %> -->
-			<h3>View pending matches</h3>
-			<!-- maybe something here to show pending matches that need scheduling confirmation -->
-		<% end %>
-	</section>
+		</section>
 	<% else %>
-	<p> This profile is private. </p>
+		<p> This profile is private. </p>
 	<% end %>
 </article>
 
