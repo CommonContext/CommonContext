@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_auth #, :find_mentor
+  before_action :set_auth, :find_mentor
 
   def index
   end
@@ -8,19 +8,17 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
   end
 
-  def create # This is needs to be shelved until we get he mentee matching flow working
+  def create
     @appointment = Appointment.new(appointment_params)
     @appointment.mentor_id = @mentor.id
     if @appointment.save
       redirect_to mentor_path(@mentor)
     else
-      p "Not being saved"
       render :new
     end
   end
 
   def show
-
     @appointment = Appointment.find(params[:id])
   end
 
@@ -37,7 +35,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:datetime, :location, :mentor_id)
+    params.require(:appointment).permit(:datetime, :location)
   end
 
 end
