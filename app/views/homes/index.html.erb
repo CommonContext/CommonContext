@@ -21,9 +21,11 @@ for logged in users -->
         <div class="card-content opacity chambray-text">
           <span class="card-title center text-darken-2 welcome"><strong>Empowering aspiring developers to connect with mentors working in the field<strong></span>
         </div>
-        <div class="card-action center">
-          <%= link_to "auth/linkedin" do%><%= image_tag('signup-linkedin.png') %>
-		<% end %>
+        <% if !current_user %>
+          <div class="card-action center">
+          <%= link_to "auth/linkedin" do%><%= image_tag('signin-linkedin.png') %>
+		    <% end %>
+        <% end %>
         </div>
       </div>
     </div>
