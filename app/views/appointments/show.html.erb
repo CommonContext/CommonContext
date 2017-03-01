@@ -2,11 +2,14 @@
 	<h2>Appointment</h2>
 	<% if @appointment %>
 		<ul>
-			<li> 
-				<%=	@appointment.datetime %>
+			<li>
+				<%=	@appointment.datetime.strftime("%B %e, %Y at %I:%M %p") %>
 			</li>
-			<li> 
+			<li>
 				<%=	@appointment.location %>
+			</li>
+			<li>
+				With <%= @appointment.mentor.first_name + " " + @appointment.mentor.last_name%> and <%= @appointment.mentee.first_name + " " + @appointment.mentee.last_name%>
 			</li>
 		</ul>
 	<% end %>
