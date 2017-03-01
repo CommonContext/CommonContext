@@ -2,6 +2,8 @@
     <ul id="nav-home" class="left">
       <li><%= link_to "Common Context", root_path %>
       </li>
+      <li><%= link_to "Calendar", calendars_path %>
+      </li>      
     </ul>
     <ul id="nav-mobile" class="right">
       <% if current_user %>
@@ -12,7 +14,7 @@
         <% elsif !current_user.id %>
           <li id="nav-profile"><%= link_to "#{current_user.name}", '/finish_registration' %>
         <% end %>       
-        <li id="nav-photo"><%= image_tag(@auth['info']['image'], class: 'img-responsive circle') %>
+        <li id="nav-photo"><%= image_tag(@auth['info']['image'], width: "79%", class: 'img-responsive circle') %>
         </li>
         <li id= "nav-signout"><%= link_to "Sign Out", '/auth/signout', method: :delete %></li>
         <% else %>

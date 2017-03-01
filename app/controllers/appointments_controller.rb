@@ -8,8 +8,8 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new
   end
-
-  def create 
+  
+   def create 
     @appointment = Appointment.new(appointment_params)
     @appointment.mentor_id = @mentor.id
     if @appointment.save
@@ -30,7 +30,47 @@ class AppointmentsController < ApplicationController
     else
       redirect_to mentee_match(mentee_id: params[:mentee_id], id: params[:match_id])
     end
+  end
 
+  def update
+    new_date = params[:new_date]
+    appointment_id = params[:appointment_id]
+
+    appointment = Appointment.find(appointment_id)
+    if !appointment
+      # Return error
+    end
+
+    appointment.datetime = new_date
+    appointment.save()
+
+    # Render success json
+  end
+
+  def users_appointments
+    # JSON endpoint that returns confirmed appointments for 
+    # the logged in user
+    user_id = session[:user_id]
+    @user_appointments = []
+
+    if user_id != nil && user_type == "mentor"
+      mentor = Mentor.find_by(user_id: session[:user_id])
+      appointments = Appointment.where(mentor_id: mentor.id)
+      appointments.each do |appointment|
+        @user_appointments << {id: appointment.id, title: "Mentor Apointment Title", start: appointment.datetime}
+      end
+    elsif user_id !=nil && user_type == "mentee"
+      mentee = Mentee.find_by(user_id: session[:user_id])
+      appointments = Appointment.where(mentee_id: mentee.id)
+      appointments.each do |appointment|
+        puts appointment.datetime
+        @user_appointments << {id: appointment.id, title: "Mentee Apointment Title", start: appointment.datetime}
+      end
+    end
+
+    respond_to do |format|
+      format.json { render json: @user_appointments, status: :ok }
+    end
   end
 
 # currently this is routing to mentee profile since we
@@ -48,5 +88,6 @@ class AppointmentsController < ApplicationController
   def appointment_params
     params.require(:appointment).permit(:datetime, :location, :mentor_id, :mentee_id)
   end
+
 
 end

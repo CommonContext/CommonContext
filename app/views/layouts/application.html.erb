@@ -9,25 +9,21 @@
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/icon?family=Material+Icons' %>
 
     <!-- Latest compiled and minified JavaScript -->
-  
-
-
-
-  <%= favicon_link_tag 'favicon.ico' %>
-
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= yield :head %>
+  </head>
   <body>
-
-
+  <style type="text/css">
+    html {
+      background: url(<%= randomized_background_image %>) no-repeat center center fixed; 
+    }
+  </style>
   <%= render '/nav' %>
-
-
-
   <% flash.each do |key, value| %>
     <div class="alert alert-info"><%= value %></div>
   <% end %>
-
-
-  
   <%= yield %>
+
+
   </body>
 </html>

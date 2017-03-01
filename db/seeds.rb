@@ -24,4 +24,4 @@ m = Match.create!(mentor_id: r.id, mentee_id: t.id)
 
 a = Appointment.create!(location: "Peets coffee", mentor_rating: 4, mentee_rating: 3, mentor_id: r.id, mentee_id: t.id, datetime: DateTime.now)
 
-# u = User.create(provider: "linkedinnn", uid: "0909090", name: "king kong")
+u = User.create(provider: "linkedinnn", uid: "0909090", name: "king kong")
