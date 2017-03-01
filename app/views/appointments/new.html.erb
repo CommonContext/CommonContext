@@ -1,4 +1,8 @@
 <article class="xarticles xappointments xnew">
 	<h1>Schedule an Appointment</h1>
-			
+	<%= form_for ([@mentor, @appointment]) do |a| %>
+    <%= a.datetime :datetime %><br>
+    <%= a.string :location %><br> 
+    <%= a.submit "Make Appointment"%>
+  <%end%>
 </article>
