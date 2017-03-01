@@ -4,7 +4,7 @@ class Match < ApplicationRecord
 
 # TODO: refactor. Algorithm depends on default fields
 # existing on the mentee and mentor model, and need to handle case when they haven't been specified
-# we also won't want to load our entire mentor table everytime this
+# we also won't want to load our entire mentor table everytime this, we could try using eager loading.
 # is called
 
   def mentor_matches(mentee)
