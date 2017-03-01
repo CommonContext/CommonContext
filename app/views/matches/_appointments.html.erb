@@ -1,8 +1,5 @@
-<h3>Schedule an Appointnment</h3>
-
 <% if @appointments %>
-  <% @appointments.each do |appointment| %>
-
+	<% @appointments.each do |appointment| %>
     <% if !appointment.datetime.nil? %>
       <p><%= appointment.datetime.strftime("%B %e, %Y at %I:%M %p") %></p>
     <% else %>

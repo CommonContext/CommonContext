@@ -1,6 +1,6 @@
 <article class="xviews xmentees xshow container row">
 	<h1>My Profile</h1>
-	<section class="col s5">  
+	<section class="col s5">
       		<%= render 'mentee_profile' %>
     </section>
 
@@ -9,7 +9,7 @@
 		<% @mentee.appointments.each do |appointment| %>
 			<ul>
 				<li>
-					<%= link_to "#{appointment.datetime}",mentee_appointment_path(appointment) %>
+					<%= link_to "#{appointment.datetime.strftime("%B %e, %Y at %I:%M %p")}",mentee_appointment_path(appointment) %>
 				</li>
 			</ul>
 		<% end %>
@@ -18,5 +18,3 @@
 		<%= link_to "Get Matches", get_matches_mentee_path(@mentee)%>
 	<% end %>
 </article>
-
-
