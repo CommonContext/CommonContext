@@ -15,7 +15,7 @@ class MentorsController < ApplicationController
     @mentor = Mentor.new(mentor_params)
     respond_to do |format|
       if @mentor.save
-        format.html { redirect_to @mentor, notice: 'Mentor was successfully created.' }
+        format.html { redirect_to @mentor }
         format.json { render :show, status: :created, location: @mentor }
       else
         format.html { render :new }
@@ -31,12 +31,6 @@ class MentorsController < ApplicationController
   end
 
   def update
-    # if @mentor.update(mentor_params)
-    #   render json: @mentor
-    # else
-    #   redirect_to 'edit'
-    # end
-
     respond_to do |format|
       if @mentor.update(mentor_params)
         format.html { redirect_to @mentor }
@@ -52,7 +46,6 @@ class MentorsController < ApplicationController
   #   @mentor.destroy
   #   redirect_to root_path
   # end
-
 
   private
 
@@ -79,6 +72,5 @@ class MentorsController < ApplicationController
                                     :user_id,
                                     )
     end
-
 
 end
