@@ -1,0 +1,14 @@
+<section class="row">
+	<div class="col s4 card mentor-match"> 
+		<h3> <%= a_match.first_name + " " + a_match.last_name %> </h3>
+		<h4><%=a_match.current_industry%></h4>
+		<h4><%=a_match.current_company%></h4>
+		<p>Years of experience: <%=a_match.years_of_experience%></p>
+		<p>Interests: <%=a_match.interests%></p>
+		<p>Email: <%=a_match.email%></p>
+	</div>
+</section>
+
+<!-- displays the mentor match information. 
+will be served by matches#show
+locals: {a_match: @match}  ?  -->

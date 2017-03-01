@@ -25,11 +25,7 @@
     <div class="alert alert-info"><%= value %></div>
   <% end %>
 
-  <% if current_user %>
-    <div class="text-center">
-      <h1>Welcome, <%= current_user.name %></h1>
-    </div>
-  <% end %>
+
   
   <%= yield %>
   </body>
