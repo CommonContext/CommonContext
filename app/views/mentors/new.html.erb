@@ -1,7 +1,9 @@
+<% if current_user %>
 <h2>Enter your details</h2>
+	<% set_user_type("mentor") %>
 
-<% set_user_type("mentor") %>
+	<%= render 'form', mentor: @mentor %>
+<% else %>
+<p>You must sign in with LinkedIn to start a profile.</p>
 
-<%= render 'form', mentor: @mentor %>
-
-<%= link_to 'Back', mentors_path %>
+<% end %>
