@@ -1,0 +1,45 @@
+<% content_for :head do %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'fullcalendar.min': 'reload' %>
+    
+    <%= javascript_include_tag 'application', 'fullcalendar.min': 'reload' %>
+
+    
+  <script type="text/javascript">
+        $(document).on("turbolinks:load", ready);
+        $(document).ready(ready);
+
+
+        function ready(){
+            $.ajax({
+              url: '/appointments',
+            }).done(function (result){
+              console.log(result);
+
+              $('#calendar').fullCalendar({
+                header: {
+                  left: 'prev,next today',
+                  center: 'title',
+                  right: 'month,agendaWeek,agendaDay,listWeek'
+                },
+                navLinks: true, // can click day/week names to navigate views
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: result,
+                eventDrop: function(event, delta, revertFunc) {
+                  data = {
+                    months: delta._months,
+                    days: delta._days
+                  };
+                }
+              });
+
+            });
+        }
+  </script>
+<% end %>
+
+<div class="container">
+  <div>Here are your appointments</div>
+  
+  <div id='calendar'></div>
+</div>

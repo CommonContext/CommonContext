@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     resources :appointments
   end
 
+  resources :calendars
+
+
+  get '/appointments', to: 'appointments#users_appointments'
 
   root 'homes#index'
 
