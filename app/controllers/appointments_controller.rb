@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_auth, :find_mentor
+  before_action :set_auth #, :find_mentor
 
   def index
   end
@@ -20,6 +20,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+
     @appointment = Appointment.find(params[:id])
   end
 

@@ -11,7 +11,8 @@
 			<% @mentor.appointments.each do |appointment| %>
 				<ul>
 					<li>
-						<%= link_to "#{appointment.datetime}", mentor_appointment_path(@mentor) %>
+						<%= link_to "#{appointment.datetime}", mentor_appointment_path(id: appointment.id, mentor_id: @mentor.id) %> <%# We should be able to clean this up.%>
+
 					</li>
 				</ul>
 
