@@ -75,7 +75,12 @@ body {
 }
 
 .home-container {
-    background-image: url('/assets/home-bg.png') !important;
+    background-image: url('/assets/street2.png') !important;
     background-size: cover !important;
 }
+
+.transparent-yellow {
+  background-color: rgba(247,233,103,.3) !important;
+}
+
 
