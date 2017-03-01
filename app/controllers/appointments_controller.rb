@@ -20,8 +20,22 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-
     @appointment = Appointment.find(params[:id])
+  end
+
+  def update
+    new_date = params[:new_date]
+    appointment_id = params[:appointment_id]
+
+    appointment = Appointment.find(appointment_id)
+    if !appointment
+      # Return error
+    end
+
+    appointment.datetime = new_date
+    appointment.save()
+
+    # Render success json
   end
 
   def users_appointments
@@ -33,13 +47,13 @@ class AppointmentsController < ApplicationController
     if user_id != nil && user_type == "mentor"
       appointments = Appointment.where(mentor_id: user_id)
       appointments.each do |appointment|
-        @user_appointments << {title: "Mentor Apointment Title", start: appointment.datetime}
+        @user_appointments << {id: appointment.id, title: "Mentor Apointment Title", start: appointment.datetime}
       end
     elsif user_id !=nil && user_type == "mentee"
       appointments = Appointment.where(mentee_id: user_id)
       appointments.each do |appointment|
         puts appointment.datetime
-        @user_appointments << {title: "Mentee Apointment Title", start: appointment.datetime}
+        @user_appointments << {id: appointment.id, title: "Mentee Apointment Title", start: appointment.datetime}
       end
     end
 

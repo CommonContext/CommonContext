@@ -26,14 +26,29 @@
                 eventLimit: true, // allow "more" link when too many events
                 events: result,
                 eventDrop: function(event, delta, revertFunc) {
-                  data = {
-                    months: delta._months,
-                    days: delta._days
+                  var new_date = event.start.format('YYYY-MM-DD HH:mm:ss');
+                  var id = event.id;
+                  var postData = {
+                    new_date: new_date,
+                    appointment_id: id
                   };
+                  updateAppointmentData(postData);
                 }
               });
-
             });
+        }
+
+
+        function updateAppointmentData(postData) {
+          $.ajax({
+            url: '/appointments',
+            method: 'POST',
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(postData),
+          }).done(function (res) {
+            
+          });
         }
   </script>
 <% end %>

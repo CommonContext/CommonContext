@@ -17,9 +17,11 @@ Rails.application.routes.draw do
 
   resources :calendars
 
+  
 
   get '/appointments', to: 'appointments#users_appointments'
-
+  post '/appointments', to: 'appointments#update'
+  
   root 'homes#index'
 
   get 'auth/:provider/callback', to: 'sessions#create'
