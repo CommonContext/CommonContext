@@ -5,7 +5,7 @@
  		</section>
 			<section class="col s7 center">
 
-    <%= link_to "Set your availability", edit_mentor_path(@mentor) %> <%#  %>
+    <%= link_to "Create Appointment", new_mentor_appointment_path(@mentor) %> <%#  %>
 		<% if @mentor.appointments.any? %>
 			<h3>Upcoming Appointments</h3>
 			<% @mentor.appointments.each do |appointment| %>
