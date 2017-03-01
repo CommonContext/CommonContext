@@ -10,7 +10,7 @@
 			<% @mentee.appointments.each do |appointment| %>
 				<ul>
 					<li>
-						<%= link_to "#{appointment.datetime}",mentee_appointment_path(appointment) %>
+						<%= link_to "#{appointment.datetime}",mentee_appointment_path(@mentee, appointment) %>
 					</li>
 				</ul>
 			<% end %>
