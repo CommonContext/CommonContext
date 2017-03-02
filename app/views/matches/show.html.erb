@@ -2,7 +2,6 @@
 <article class="xviews xmatches xshow">
 <% if current_user && user_type == "mentee" && get_user.id == @mentee.id %>
 	<h2>My Match: <%= @match.mentor.first_name + " " + @match.mentor.last_name %></h2>
-		<%# render partial: "/mentees/mentor_deets_card", locals: { a_match: @match.mentor } %>
 		<h4>Some of <%= @match.mentor.first_name%>'s details:</h4>
 		<ul>
 			<li>Years of experience: <%=@match.mentor.years_of_experience %></li>
@@ -17,11 +16,11 @@
 			<li>This mentor is currently in good standing: <%=@match.mentor.good_standing %></li>
 		</ul>
 
-		<h3>Schedule an Appointnment</h3>
+		<h3>Schedule an Appointment</h3>
 		<%= render 'appointments' %>
 
 		<!-- TODO nice to have: make appt request if none served -->
 	<% else %>
 		<p>These matches are not yours.</p>
-	<% end %> 
+	<% end %>
 </article>
