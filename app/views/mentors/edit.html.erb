@@ -1,9 +1,10 @@
-<article class="xviews xmentors xshow">
+
+<article class="xviews xmentors xshow row">
 	<% if current_user && user_type == "mentor" && get_user.id == @mentor.id %>
 	<h2>Edit Profile</h2>
-
 	<%= render 'form'%>
 	<% else %>
 	<p> This page is private. </p>
 	<% end %>
 </article>
+
