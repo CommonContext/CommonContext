@@ -3,6 +3,6 @@ class NotificationMailer < ApplicationMailer
 
   def welcome_email()
     to_email = "dharinishree@gmail.com"
-    mail(to: to_email, subject: 'Welcome to My Awesome Site')
+    mail(to: to_email, subject: 'This is the welcome Email')
   end
 end
