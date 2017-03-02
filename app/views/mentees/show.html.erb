@@ -1,0 +1,27 @@
+<article class="xviews xmentees xshow container row">
+	<% if current_user && user_type == "mentee" && get_user.id == @mentee.id %>
+		<section class="col s5">  
+	      		<%= render 'mentee_profile' %>
+	    </section>
+	<section class="col s7 center card hoverable">
+		<% if @mentee.appointments.any? %>
+			<h3>Upcoming Appointments</h3>
+			<ul>
+				<% @mentee.appointments.each do |appointment| %>
+					<li>
+						Appointment with <%= appointment.mentor.first_name + " " + appointment.mentor.last_name %>:
+					</li>
+					<li>
+						<%= link_to "#{appointment.datetime.strftime("%B %e, %Y at %I:%M %p")}", mentee_appointment_path(@mentee, appointment) %> <%# id: appointment.id, mentor_id: appointment.mentor.id%>
+					</li>
+				<% end %>
+			</ul>
+
+		<% else %>
+			<h3>Match with a mentor</h3>
+			<%= link_to "Get Matches", get_matches_mentee_path(@mentee)%>
+		<% end %>
+	<% else %>
+	<p>This account is private.</p>	
+	<% end %>
+</article>

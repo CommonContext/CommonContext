@@ -1,0 +1,7 @@
+<% if current_user %>
+	<h2>Mentee Registration</h2>
+	<% set_user_type("mentee") %>
+	<%= render 'form', mentee: @mentee%>
+<% else %>
+	<p>You must sign in with LinkedIn to start a profile.</p>
+<% end %>

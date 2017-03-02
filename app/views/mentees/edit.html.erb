@@ -1,0 +1,11 @@
+<article class="xviews xmentees xshow">
+	<% if current_user && user_type == "mentee" && get_user.id == @mentee.id %>
+		<h2>Edit Profile</h2>
+		<%= render 'form'%>
+
+		<%= link_to 'Show', @mentee %> |
+		<%= link_to 'Back', mentee_path %>
+	<% else %>
+		<p> This page is private. </p>
+	<% end %>
+</article>

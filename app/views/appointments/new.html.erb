@@ -1,0 +1,7 @@
+<article class="xarticles xappointments xnew">
+	<% if current_user && user_type == "mentor"%>
+	<h4>Schedule an Appointment</h4>
+		<%= render 'form' %>
+	<% else %>
+	<p>You must be a mentor to make an appointment available.</p>
+</article>

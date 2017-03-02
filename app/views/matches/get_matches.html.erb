@@ -1,0 +1,22 @@
+
+<article class="xarticles xmatches xget-matches">
+	<% if current_user && user_type == "mentee" && get_user.id == @mentee.id %>
+	<h1>Mentee Matches</h1>
+				<div class="row">
+				<% @mentor_matches.each do |a_match| %>
+					<div class="col s4 card mentor-match">
+						<h3> <%= a_match.first_name + " " + a_match.last_name %> </h3>
+						<h4><%=a_match.current_industry%></h4>
+						<h4><%=a_match.current_company%></h4>
+						<%= form_for [@mentee, @match] do |f| %>
+						<%= hidden_field_tag(:mentee, @mentee.id) %>
+						<%= hidden_field_tag(:mentor, a_match.id) %>
+							<%= f.submit "Select Mentor", class: "select-mentor btn"%>
+						<% end %>
+					</div>
+				<% end %>
+				</div>
+		<% else %> 
+		<p>You may only request matches from your profile page.</p>
+		<% end %>
+</article>

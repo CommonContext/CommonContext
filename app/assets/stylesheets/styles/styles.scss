@@ -1,0 +1,94 @@
+h3 {
+  color: #7AC8CC;
+}
+
+h1, h2, h4 {
+color: #364E93;
+}
+
+ /*form styling*/
+
+/*form label*/
+ .input-field label {
+ 	/*dark blue*/
+    color: #364E93 !important; 
+    font-size: 1.5rem !important;
+}
+
+/*form label for checkbox*/
+[type="checkbox"] + label {
+    font-size: 1.5rem !important;
+    color: #364E93 !important;
+}
+
+ /* label underline focus color */
+   .input-field input[type=text]:focus {
+   	/*darker yellow*/
+     border-bottom: 1px solid #FFE349 !important;
+     box-shadow: 0 1px 0 0 #FFE349 !important;
+   }
+
+    .input-field input[type=email]:focus {
+   	/*darker yellow*/
+     border-bottom: 1px solid #FFE349 !important;
+     box-shadow: 0 1px 0 0 #FFE349 !important;
+   }
+
+/*years of experience field*/
+   .input-field input[type=number]:focus {
+   	/*darker yellow*/
+     border-bottom: 1px solid #FFE349 !important;
+     box-shadow: 0 1px 0 0 #FFE349 !important;
+   }
+
+/*availability*/
+   .input-field input[type=datetime-local]:focus {
+   	/*darker yellow*/
+     border-bottom: 1px solid #FFE349 !important;
+     box-shadow: 0 1px 0 0 #FFE349 !important;
+   }
+
+   .mentor-match {
+      display: inline-block !important;
+   }
+
+.home-header {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+   
+.card {
+  padding: 25px;
+}
+
+.home-wrapper {
+  padding: 70px;
+}
+
+.deets-card {
+  padding: 50px !important;
+}
+
+body {
+  background-color: #fffef9 !important;  
+}
+
+.home-container {
+    background-image: url('/assets/street2.png') !important;
+    background-size: cover !important;
+}
+
+
+.transparent-yellow {
+  background-color: rgba(247,233,103,.5) !important;
+}
+
+.welcome {
+  color: rgba(247,233,103,.5) !important;
+}
+
+.material-icons {
+  color: #364E93 !important;
+}
+
+

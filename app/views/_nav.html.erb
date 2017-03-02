@@ -1,0 +1,25 @@
+  <nav class="nav-wrapper chambray">
+    <ul id="nav-home" class="left">
+      <li><%= link_to "Common Context", root_path %>
+      </li>
+      <li><%= link_to "Calendar", calendars_path %>
+      </li>      
+    </ul>
+    <ul id="nav-mobile" class="right">
+      <% if current_user %>
+        <% if user_type == "mentor" && get_user %>
+          <li id="nav-profile"><%= link_to "#{current_user.name}", mentor_path(get_user) %>
+        <% elsif user_type == "mentee"  && get_user%>
+          <li id="nav-profile"><%= link_to "#{current_user.name}", mentee_path(get_user) %>
+        <% elsif !current_user.id %>
+          <li id="nav-profile"><%= link_to "#{current_user.name}", '/finish_registration' %>
+        <% end %>       
+        <li id="nav-photo"><%= image_tag(@auth['info']['image'], width: "79%", class: 'img-responsive circle') %>
+        </li>
+        <li id= "nav-signout"><%= link_to "Sign Out", '/auth/signout', method: :delete %></li>
+        <% else %>
+        <li id="nav-signin"><%= link_to "auth/linkedin" do%><%= image_tag('login.png', width: '70', height: '70') %><% end %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>

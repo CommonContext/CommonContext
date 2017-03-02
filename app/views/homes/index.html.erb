@@ -1,0 +1,102 @@
+<!-- rather than rendering and embedding the user profile page we should route
+there and keep the home page just as a home page with the signin buttons hidden
+for logged in users -->
+
+<!-- /*<div class = "iris">
+   <div class = "card transparent z-depth-5">
+   </div>
+</div> -->
+
+<div class="home-container">
+ <% if current_user %>
+    <div class="text-center">
+      <h5 class="welcome">Welcome, <%= current_user.name %></h5>
+    </div>
+  <% end %>
+  <div class="row home-col valign-wrapper home-wrapper">
+    <div class="col s6 offset-s3 valign">
+    	<h2 class="valign center home-header">Common Context</h2>
+      <div class="card home-card transparent-yellow z-depth-5 portica hoverable">
+        <div class="card-content opacity chambray-text">
+          <span class="card-title center text-darken-2"><strong>Empowering aspiring developers to connect with mentors working in the field<strong></span>
+        </div>
+        <% if !current_user %>
+          <div class="card-action center">
+          <%= link_to "auth/linkedin" do%><%= image_tag('signin-linkedin.png') %>
+		    <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="medium material-icons">chat_bubble_outline</i></h2>
+            <h5 class="center">Tell us about yourself</h5>
+
+            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="medium material-icons">group</i></h2>
+            <h5 class="center">Get connected</h5>
+
+            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="medium material-icons">trending_up</i></h2>
+            <h5 class="center">Advance your career</h5>
+
+            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  <footer class="page-footer chambray">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">We are ...</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+    </div>
+  </footer>
+

@@ -1,0 +1,25 @@
+<article class="xviews xmentor xappointment xnew card-panel hoverable">
+  <%= form_for([@mentor, @appointment]) do |f| %>
+
+  <div class="row">
+    <div class="col s6">
+      <%= f.label :datetime  %>
+      <%= f.datetime_local_field :datetime %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s6">
+      <div class="input-field">
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+      </div>
+    </div>
+  </div>
+
+  <div class="xbuttons">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+</article>

@@ -1,0 +1,10 @@
+<section class="row">
+	<div class="col s4 card mentor-match"> 
+		<h3><%= a_match.first_name + " " + a_match.last_name %> </h3>
+		<h4><%=a_match.location%></h4>
+		<p>Interests: <%=a_match.interests%></p>
+		<p>Linkedin: <%=a_match.objective%></p>
+		<p>LinkedIn Link: <span><%= link_to a_match.linkedin_link, "https://#{@mentee.linkedin_link}"%></p>
+	</div>
+</section>
+
