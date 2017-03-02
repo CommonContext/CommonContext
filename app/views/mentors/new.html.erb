@@ -1,5 +1,6 @@
+<article>
 <% if current_user %>
-<h2>Enter your details</h2>
+<h3>Enter your details</h3>
 	<% set_user_type("mentor") %>
 
 	<%= render 'form', mentor: @mentor %>
@@ -7,3 +8,4 @@
 <p>You must sign in with LinkedIn to start a profile.</p>
 
 <% end %>
+</article>

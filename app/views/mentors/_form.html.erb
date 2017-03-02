@@ -1,5 +1,5 @@
-<article class="xviews xmentor xnew card-panel col s6 hoverable">
-  <div class="demog-info">
+<section class="xviews xmentor xnew card-panel hoverable">
+  <div class="demog-info left-align">
     <p>Demographic identity can be a sensitive discussion. All of our demographic form fields are optional, and text based, so you can enter whatever you like. </p>
 
       <p> If a field is not important to how you identify, feel free to leave it blank. </p>
@@ -7,22 +7,23 @@
       <p> We find that most of our users feel strongly about some aspect of their identity, so consider if your mentee would want to meet someone like you.
       </p>
     </div>
+    <div class="container center">
   <%= form_for(@mentor) do |f| %>
 
     <div class="field">
       <div class="row">
-        <div class="input-field col s3">
+        <div class="input-field col s6">
           <%= f.label :first_name, class: "active"%>
           <%= f.text_field :first_name, :value => @auth['info']['first_name'] %><br>
         </div>
-        <div class="input-field col s3">
+        <div class="input-field col s6">
           <%= f.label :last_name, class: "active" %>
           <%= f.text_field :last_name, :value => @auth['info']['last_name'] %><br>
         </div>
       </div>
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
             <%= f.label :email, class: "active" %>
             <%= f.email_field :email, :value => @auth['info']['email'] %><br>
@@ -32,7 +33,7 @@
 
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
              <%= f.label :years_of_experience %>
              <%= f.number_field :years_of_experience %>
@@ -41,7 +42,7 @@
       </div>
 
        <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
              <%= f.label :current_company, class: "active" %>
              <%= f.text_field :current_company %>  <!-- TODO: Switch 'description' to company-->
@@ -50,7 +51,7 @@
       </div>
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
             <%= f.label :current_industry, class: "active" %>
             <%= f.text_field :current_industry %>
@@ -59,7 +60,7 @@
       </div>
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
             <%= f.label :linkedin_link, class: "active" %>
             <%= f.text_field :linkedin_link, :value => @auth['info']['urls']['public_profile'] %>
@@ -70,7 +71,7 @@
     <div class="diversity">
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
           <i class="tiny material-icons right tooltipped" data-position="right" data-delay="50" data-tooltip="If you are biracial, or identify with multiple ethnicities, please list them all!">info_outline</i>
             <%= f.label :race, class: "active" %>
@@ -80,7 +81,7 @@
       </div>
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
           <i class="tiny material-icons right tooltipped" data-position="right" data-delay="50" data-tooltip="If you are gender non-conforming, please include your preferred pronouns">info_outline</i>
             <%= f.label :gender, class: "active" %>
@@ -90,7 +91,7 @@
       </div>
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
           <i class="tiny material-icons right tooltipped" data-position="right" data-delay="50" data-tooltip="Please bare in mind that this field means to capture people who feel underserved because of their socioeconomic background.">info_outline</i>
             <%= f.label :socioeconomic_background, class: "active" %>
@@ -100,7 +101,7 @@
       </div>
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
           <i class="tiny material-icons right tooltipped" data-position="right" data-delay="50" data-tooltip="This can overlap with gender, but if it doesn’t for you, fill it out!">info_outline</i>
             <%= f.label :orientation, class: "active" %>
@@ -110,7 +111,7 @@
       </div>
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
           <i class="tiny material-icons right tooltipped" data-position="right" data-delay="50" data-tooltip="Was there something that we missed? We want to make sure that what you identify with is captured here!">info_outline</i>
             <%= f.label :other %>
@@ -120,7 +121,7 @@
       </div>
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
             <%= f.label :location, class: "active" %>
             <%= f.text_field :location %>
@@ -129,7 +130,7 @@
       </div>
 
       <div class="row">
-        <div class="col s6">
+        <div class="col s12">
           <div class="input-field">
             <%= f.label :interests, class: "active" %>
             <%= f.text_field :interests %>
@@ -144,4 +145,4 @@
       </div>
 
   <% end %>
-</article>
+</section>
