@@ -16,7 +16,7 @@ class MentorsController < ApplicationController
     @mentor.user_id = User.find_by(uid: @auth['uid']).id
     respond_to do |format|
       if @mentor.save
-        format.html { redirect_to @mentor, notice: 'Mentor was successfully created.' }
+        format.html { redirect_to @mentor }
         format.json { render :show, status: :created, location: @mentor }
       else
         format.html { render :new }
