@@ -1,9 +1,9 @@
 <article class="xviews xmentors xshow container row">
 	<% if current_user && user_type == "mentor" && get_user.id == @mentor.id %>
-		<section class="col s5">
+		<section class="col s6">
 			<%= render 'mentor_profile' %>
 		</section>
-		<section class="col s7 center card hoverable">
+		<section class="col s6 center card hoverable">
 	    <h5><%= link_to "Add an appointment time", new_mentor_appointment_path(@mentor) %></h5>
 			<% if @mentor.appointments.any? %>
 				<h3>Upcoming Meetings</h3>
@@ -14,7 +14,10 @@
 								<%= link_to "#{appointment.datetime.strftime("%B %e, %Y at %I:%M %p")}", mentor_appointment_path(@mentor, appointment) %> <%# with #{appointment.mentee.first_name + " " + appointment.mentee.last_name}   We should be able to clean this up.%>
 							</li>
 						</ul>
+					<% else %>
+					<p>You don't have any scheduled appointments.</p>
 					<% end %>
+
 				<% end %>
 
 				<h3>Available Appointment Times</h3>

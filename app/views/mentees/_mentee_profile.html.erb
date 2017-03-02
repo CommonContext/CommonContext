@@ -7,7 +7,7 @@
 			<li>Interests: <%=@mentee.interests%></li>
 			<li>Email: <%=@mentee.email%></li>
 			<li>Objective: <%=@mentee.objective%></li>
-			<li>LinkedIn Profile: <span><%= link_to @mentee.linkedin_link, "https://#{@mentee.linkedin_link}"%></li>
+			<li><%= link_to "LinkedIn Profile", @mentee.linkedin_link%></li>
 			<li>Race: <%=@mentee.race%></li>
 			<li>Gender: <%=@mentee.gender %></li>
 			<li>Orientation: <%= @mentee.orientation %></li>

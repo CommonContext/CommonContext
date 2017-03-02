@@ -21,7 +21,7 @@ for logged in users -->
           <span class="card-title center text-darken-2">Empowering aspiring developers to connect with mentors working in the field</span>
         </div>
         <% if !current_user %>
-          <div class="card-action center">
+          <div class="center">
           <%= link_to "auth/linkedin" do%><%= image_tag('signin-linkedin.png') %>
 		    <% end %>
         <% end %>
@@ -71,21 +71,27 @@ for logged in users -->
     </div>
 
 
-  <footer class="page-footer chambray">
+<!--  <div class="row">
+      <div class="col s12">This div is 12-columns wide</div>
+      <div class="col s6">This div is 6-columns wide</div>
+      <div class="col s6">This div is 6-columns wide</div>
+    </div> -->
+
+  <footer class="page-footer row-full chambray">
     <div class="container">
       <div class="row">
-        <div class="widthset">
+        <div class="footer-col col s4">
           <h5 class="center white-text">About Us</h5>
-          <p class="center grey-text text-lighten-4">We are budding Software Engineers willing to bring people from different culture to Software developemnt</p>
+          <p class="center grey-text text-lighten-4">We are Software Engineers willing to bring people from different culture to Software development</p>
 
         </div>
-        <div class="widthset">
+        <div class="footer-col col s4">
           <h5 class="center white-text">Vision</h5>
           <ul>
             <li><a class="white-text">To create opportunity for aspiring developers to connect with people of their ethnic group in tech </a></li>
           </ul>
         </div>
-        <div class="widthset">
+        <div class="footer-col col s4">
           <h5 class="center white-text">Connect</h5>
           <ul>
             <li><a class="center white-text" href="#!">commoncontextinfo@gmail.com</a></li>
