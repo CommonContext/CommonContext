@@ -1,6 +1,6 @@
 module ApplicationHelper
   def randomized_background_image
-    images = ["assets/street2.png", "/assets/people.jpg"]
+    images = ["/assets/people.jpg"]
     images[rand(images.size)]
   end
 end

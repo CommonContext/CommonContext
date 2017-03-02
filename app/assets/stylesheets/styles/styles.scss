@@ -3,7 +3,7 @@ h3 {
 }
 
 h1, h2, h4 {
-color: #364E93;
+color: #351E17;
 }
 
  /*form styling*/
@@ -70,7 +70,7 @@ color: #364E93;
 }
 
 body {
-  background-color: #fffef9 !important;  
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%),  
 }
 
 .home-container {
@@ -85,6 +85,7 @@ body {
 
 .welcome {
   color: rgba(247,233,103,.5) !important;
+  opacity:0;
 }
 
 .material-icons {
