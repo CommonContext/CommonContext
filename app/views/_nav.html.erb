@@ -2,8 +2,9 @@
     <ul id="nav-home" class="left">
       <li><%= link_to "Common Context", root_path %>
       </li>
-      <li><%= link_to "Calendar", calendars_path %>
-      </li>      
+      <% if set_auth %>
+        <li><%= link_to "Calendar", calendars_path %></li>  
+      <% end %>    
     </ul>
     <ul id="nav-mobile" class="right">
       <% if current_user %>
