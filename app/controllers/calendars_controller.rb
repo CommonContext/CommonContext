@@ -1,6 +1,6 @@
 class CalendarsController < ApplicationController
-  before_action :set_auth #, :find_mentor
-  
+  before_action :set_auth
+
   def index
   end
 
