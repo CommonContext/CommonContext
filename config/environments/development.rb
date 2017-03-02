@@ -55,12 +55,14 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
     :address        => 'smtp.mailgun.org',
     :port           => 587,
     :authentication => "plain",
-    :user_name      => 'postmaster@sandbox2e2eeebb1b34468fb4cabb812062aba8.mailgun.org',
-
+    :user_name => ENV["MAILGUN_USERNAME_PROD"],
+    :domain => ENV["MAILGUN_DOMAIN_PROD"],
+    :password => ENV["MAILGUN_PASSWORD_PROD"]
   }
 end
 
