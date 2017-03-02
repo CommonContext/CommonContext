@@ -14,8 +14,6 @@
 								<%= link_to "#{appointment.datetime.strftime("%B %e, %Y at %I:%M %p")}", mentor_appointment_path(@mentor, appointment) %> <%# with #{appointment.mentee.first_name + " " + appointment.mentee.last_name}   We should be able to clean this up.%>
 							</li>
 						</ul>
-					<% else %>
-					<p>You don't have any scheduled appointments.</p>
 					<% end %>
 
 				<% end %>
