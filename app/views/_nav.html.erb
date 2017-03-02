@@ -19,7 +19,7 @@
         </li>
         <li id= "nav-signout"><%= link_to "Sign Out", '/auth/signout', method: :delete %></li>
         <% else %>
-        <li id="nav-signin"><%= link_to "auth/linkedin" do%><button type="button" class="btn btn-primary active">Login</button><% end %>
+        <li id="nav-signin" class = "chambray-text"><%= link_to "auth/linkedin" do%><button type="button" class="btn btn-primary active"><b>Login</b></button><% end %>
         </li>
       <% end %>
     </ul>
