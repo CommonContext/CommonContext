@@ -1,11 +1,12 @@
 
-<article class="xviews xmatches xshow">
+<article class="xviews xmatches xshow row">
 <% if current_user && user_type == "mentee" && get_user.id == @mentee.id %>
-	<h2>My Match: <%= @match.mentor.first_name + " " + @match.mentor.last_name %></h2>
+		<h3>My Match: <%= @match.mentor.first_name + " " + @match.mentor.last_name %></h3>
+		<section class="card hoverable col8">
 		<h4>Some of <%= @match.mentor.first_name%>'s details:</h4>
 		<ul>
 			<li>Years of experience: <%=@match.mentor.years_of_experience %></li>
-			<li>LinkedIn Profile: <span><%= link_to @match.mentor.linkedin_link, "#{@match.mentor.linkedin_link}"%></li>
+			<li><%= link_to "Linkedin Profile", @match.mentor.linkedin_link %></li>
 			<li>Email: <%=@match.mentor.email %></li>
 			<li>Race / Ethnicity: <%=@match.mentor.race %></li>
 			<li>Gender: <%=@match.mentor.gender %></li>
@@ -23,4 +24,5 @@
 	<% else %>
 		<p>These matches are not yours.</p>
 	<% end %>
+	</section>
 </article>
