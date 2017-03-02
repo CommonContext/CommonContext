@@ -70,7 +70,7 @@ color: #351E17;
 }
 
 body {
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%),  
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%);
 }
 
 .home-container {
@@ -90,6 +90,10 @@ body {
 
 .material-icons {
   color: #364E93 !important;
+}
+
+.xshow {
+  height: 1000px;
 }
 
 
