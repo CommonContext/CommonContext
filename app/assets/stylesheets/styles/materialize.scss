@@ -1,7 +1,11 @@
 
-.chambray{
-  background-color: #4A241B !important;
-  background-image: -webkit-radial-gradient(50% top, circle, rgba(182, 111, 56, 1) 0%, rgba(71, 38, 26, 1) 75%),-webkit-radial-gradient(right top, circle, #794aa2 0%, rgba(254, 180, 96, 1) 57%);
+/*.chambray{
+  background-color: #364E93 !important;
+  background-image: -webkit-radial-gradient(50% top, circle, rgba(182, 111, 56, 1) 0%, rgba(71, 38, 26, 1) 75%),-webkit-radial-gradient(right top, circle, #364E93 0%, rgba(254, 180, 96, 1) 57%);
+}*/
+
+.chambray {
+   background-image: -webkit-radial-gradient(50% top, circle, rgba(6, 91, 165, 0.6) 0%, rgba(11, 39, 119, 0.88) 75%), -webkit-radial-gradient(right top, circle,  #000000 0%, #1139af 57%);
 }
 
 .chambray-text {
