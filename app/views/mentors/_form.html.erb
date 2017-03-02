@@ -9,15 +9,6 @@
     </div>
   <%= form_for(@mentor) do |f| %>
 
-    <div class="row">
-      <div class="col s6">
-        <div class="input-field">
-          <%= f.label :availability %> <br>
-          <%= f.datetime_field :availability %>
-        </div>
-      </div>
-    </div>
-
     <div class="field">
       <div class="row">
         <div class="input-field col s3">
@@ -53,7 +44,7 @@
         <div class="col s6">
           <div class="input-field">
              <%= f.label :current_company, class: "active" %>
-             <%= f.text_field :current_company, :value => @auth['info']['description'] %>  <!-- TODO: Switch 'description' to company-->
+             <%= f.text_field :current_company %>  <!-- TODO: Switch 'description' to company-->
           </div>
         </div>
       </div>
