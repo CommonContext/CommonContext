@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
   before_action :set_auth
   before_action :find_mentor, only: [:new, :create]
-  skip_before_filter :verify_authenticity_token
+  # skip_before_filter :verify_authenticity_token
   
   def index
   end
@@ -18,6 +18,10 @@ class AppointmentsController < ApplicationController
     else
       render :new
     end
+    puts "*" * 50
+    puts @appointment.mentor.email
+    @email = @appointment.mentor.email
+    NotificationMailer.welcome_email(@email).deliver_now
   end
 
   def show
@@ -27,7 +31,13 @@ class AppointmentsController < ApplicationController
   def schedule
     @appointment = Appointment.find(params[:id])
     if @appointment.update(mentee_id: params[:mentee_id])
+      puts "*" * 50
+      puts "menteee is here"
+      puts @appointment.mentee.email
+      @email = @appointment.mentee.email
+      NotificationMailer.welcome_email(@email).deliver_now
       redirect_to mentee_path(id: params[:mentee_id])
+
     else
       redirect_to mentee_match(mentee_id: params[:mentee_id], id: params[:match_id])
     end
