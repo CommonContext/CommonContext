@@ -1,11 +1,6 @@
 class MentorsController < ApplicationController
-  before_action :find_mentor, only: [:show, :edit, :update, :destroy]
+  before_action :find_mentor, only: [:show, :edit, :update]
   before_action :set_auth
-
-  # def index
-  #   @mentors = Mentor.all
-  #   render json: @mentors
-  # end
 
   def new
     @mentor = Mentor.new
@@ -32,11 +27,6 @@ class MentorsController < ApplicationController
   end
 
   def update
-    # if @mentor.update(mentor_params)
-    #   render json: @mentor
-    # else
-    #   redirect_to 'edit'
-    # end
     respond_to do |format|
       if @mentor.update(mentor_params)
         format.html { redirect_to @mentor }
@@ -47,12 +37,6 @@ class MentorsController < ApplicationController
       end
     end
   end
-
-  # def destroy
-  #   @mentor.destroy
-  #   redirect_to root_path
-  # end
-
 
   private
 
@@ -78,6 +62,5 @@ class MentorsController < ApplicationController
                                     :other
                                     )
     end
-
 
 end
