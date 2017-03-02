@@ -8,8 +8,8 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new
   end
-  
-   def create 
+
+   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.mentor_id = @mentor.id
     if @appointment.save
@@ -48,7 +48,7 @@ class AppointmentsController < ApplicationController
   end
 
   def users_appointments
-    # JSON endpoint that returns confirmed appointments for 
+    # JSON endpoint that returns confirmed appointments for
     # the logged in user
     user_id = session[:user_id]
     @user_appointments = []
@@ -72,12 +72,6 @@ class AppointmentsController < ApplicationController
       format.json { render json: @user_appointments, status: :ok }
     end
   end
-
-# currently this is routing to mentee profile since we
-# are immediately booking the appointment. If we
-# require confirmation and this becomes a request, we will
-# move this logic to a custom action like #request_appointment
-# and only create the appointment on Mentor confirmation
 
   private
 
