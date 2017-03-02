@@ -1,12 +1,16 @@
-<section class="hoverable center">
-	<% if current_user %>
-		<ul class="center-align">
-			<li class="sign-up"><%= link_to "Sign up as Mentor", new_mentor_path, class: "btn" %></li>
-			<li class="sign-up"><%= link_to "Sign up as Mentee", new_mentee_path, class: "btn" %></li>	
-		</ul>
-	<% else %>
-	<p>Oops! You've already finished registration.</p>
-	<% end %>
-</section>
-
+<article class="row">
+	<div class="registration">
+	<section class="hoverable col s6">
+	<h3>Complete Registration</h3>
+		<% if current_user %>
+			<ul class="center-align">
+				<li class="sign-up"><%= link_to "Sign up as Mentor", new_mentor_path, class: "btn" %></li>
+				<li class="sign-up"><%= link_to "Sign up as Mentee", new_mentee_path, class: "btn" %></li>	
+			</ul>
+		<% else %>
+		<p>Oops! You've already finished registration.</p>
+		<% end %>
+	</section>
+	</div>
+</article>
 

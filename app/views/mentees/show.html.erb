@@ -1,9 +1,9 @@
 <article class="xviews xmentees xshow container row">
 	<% if current_user && user_type == "mentee" && get_user.id == @mentee.id %>
-		<section class="col s5">  
+		<section class="col s7">  
 	      		<%= render 'mentee_profile' %>
 	    </section>
-	<section class="col s7 center card hoverable">
+	<section class="col s5 center card hoverable">
 		<% if @mentee.appointments.any? %>
 			<h3>Upcoming Appointments</h3>
 			<ul>
