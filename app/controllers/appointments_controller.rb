@@ -1,7 +1,8 @@
 class AppointmentsController < ApplicationController
   before_action :set_auth
   before_action :find_mentor, only: [:new, :create]
-
+  skip_before_filter :verify_authenticity_token
+  
   def index
   end
 
