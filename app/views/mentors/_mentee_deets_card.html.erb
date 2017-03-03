@@ -3,8 +3,8 @@
 		<h3><%= a_match.first_name + " " + a_match.last_name %> </h3>
 		<h4><%=a_match.location%></h4>
 		<p>Interests: <%=a_match.interests%></p>
-		<p>Linkedin: <%=a_match.objective%></p>
-		<p>LinkedIn Link: <span><%= link_to a_match.linkedin_link, "https://#{@mentee.linkedin_link}"%></p>
+		<p>Objective: <%=a_match.objective%></p>
+		<p><%= link_to "LinkedIn Profile", a_match.linkedin_link%></p>
 	</div>
 </section>
 

@@ -2,8 +2,9 @@
     <ul id="nav-home" class="left">
       <li><%= link_to "Common Context", root_path %>
       </li>
-      <li><%= link_to "Calendar", calendars_path %>
-      </li>      
+      <% if set_auth %>
+        <li><%= link_to "Calendar", calendars_path %></li>  
+      <% end %>    
     </ul>
     <ul id="nav-mobile" class="right">
       <% if current_user %>
@@ -18,7 +19,7 @@
         </li>
         <li id= "nav-signout"><%= link_to "Sign Out", '/auth/signout', method: :delete %></li>
         <% else %>
-        <li id="nav-signin"><%= link_to "auth/linkedin" do%><%= image_tag('login.png', width: '70', height: '70') %><% end %>
+        <li id="nav-signin" class = "chambray-text"><%= link_to "auth/linkedin" do%><button type="button" class="btn btn-primary active">Login</button><% end %>
         </li>
       <% end %>
     </ul>

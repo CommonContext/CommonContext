@@ -1,12 +1,12 @@
 
-<article class="xviews xmatches xshow">
+<article class="xviews xmatches xshow row">
 <% if current_user && user_type == "mentee" && get_user.id == @mentee.id %>
-	<h2>My Match: <%= @match.mentor.first_name + " " + @match.mentor.last_name %></h2>
-		<%# render partial: "/mentees/mentor_deets_card", locals: { a_match: @match.mentor } %>
+		<h3>My Match: <%= @match.mentor.first_name + " " + @match.mentor.last_name %></h3>
+		<section class="card hoverable col8">
 		<h4>Some of <%= @match.mentor.first_name%>'s details:</h4>
 		<ul>
 			<li>Years of experience: <%=@match.mentor.years_of_experience %></li>
-			<li>LinkedIn Profile: <span><%= link_to @match.mentor.linkedin_link, "#{@match.mentor.linkedin_link}"%></li>
+			<li><%= link_to "Linkedin Profile", @match.mentor.linkedin_link %></li>
 			<li>Email: <%=@match.mentor.email %></li>
 			<li>Race / Ethnicity: <%=@match.mentor.race %></li>
 			<li>Gender: <%=@match.mentor.gender %></li>
@@ -17,11 +17,12 @@
 			<li>This mentor is currently in good standing: <%=@match.mentor.good_standing %></li>
 		</ul>
 
-		<h3>Schedule an Appointnment</h3>
+		<h3>Schedule an Appointment</h3>
 		<%= render 'appointments' %>
 
 		<!-- TODO nice to have: make appt request if none served -->
 	<% else %>
 		<p>These matches are not yours.</p>
-	<% end %> 
+	<% end %>
+	</section>
 </article>

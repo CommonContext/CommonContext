@@ -13,17 +13,8 @@
     <%= yield :head %>
   </head>
   <body>
-  <style type="text/css">
-    html {
-      background: url(<%= randomized_background_image %>) no-repeat center center fixed; 
-    }
-  </style>
+  
   <%= render '/nav' %>
-  <% flash.each do |key, value| %>
-    <div class="alert alert-info"><%= value %></div>
-  <% end %>
   <%= yield %>
-
-
   </body>
 </html>

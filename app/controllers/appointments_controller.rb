@@ -1,15 +1,16 @@
 class AppointmentsController < ApplicationController
   before_action :set_auth
   before_action :find_mentor, only: [:new, :create]
-
+  # skip_before_filter :verify_authenticity_token
+  
   def index
   end
 
   def new
     @appointment = Appointment.new
   end
-  
-   def create 
+
+   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.mentor_id = @mentor.id
     if @appointment.save
@@ -17,6 +18,10 @@ class AppointmentsController < ApplicationController
     else
       render :new
     end
+    puts "*" * 50
+    puts @appointment.mentor.email
+    @email = @appointment.mentor.email
+    NotificationMailer.welcome_email(@email).deliver_now
   end
 
   def show
@@ -26,7 +31,13 @@ class AppointmentsController < ApplicationController
   def schedule
     @appointment = Appointment.find(params[:id])
     if @appointment.update(mentee_id: params[:mentee_id])
+      puts "*" * 50
+      puts "menteee is here"
+      puts @appointment.mentee.email
+      @email = @appointment.mentee.email
+      NotificationMailer.welcome_email(@email).deliver_now
       redirect_to mentee_path(id: params[:mentee_id])
+
     else
       redirect_to mentee_match(mentee_id: params[:mentee_id], id: params[:match_id])
     end
@@ -48,7 +59,7 @@ class AppointmentsController < ApplicationController
   end
 
   def users_appointments
-    # JSON endpoint that returns confirmed appointments for 
+    # JSON endpoint that returns confirmed appointments for
     # the logged in user
     user_id = session[:user_id]
     @user_appointments = []
@@ -72,12 +83,6 @@ class AppointmentsController < ApplicationController
       format.json { render json: @user_appointments, status: :ok }
     end
   end
-
-# currently this is routing to mentee profile since we
-# are immediately booking the appointment. If we
-# require confirmation and this becomes a request, we will
-# move this logic to a custom action like #request_appointment
-# and only create the appointment on Mentor confirmation
 
   private
 

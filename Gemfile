@@ -41,7 +41,7 @@ gem 'faker'
 
 gem 'omniauth-oauth2', '1.3.1'
 gem 'omniauth-linkedin-oauth2'
-
+gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
 gem 'dotenv'
 gem 'momentjs-rails'
 
