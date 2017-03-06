@@ -7,11 +7,13 @@ There isn't enough diversity in tech.
 Match aspiring developers with mentors working in the field to promote nurturing connections based on their common context rather than existing connections. 
 
 ## Screenshots
-![Splash](/app/assets/images/splash.png)
+<!--![Splash](/app/assets/images/splash.png)
 ![Form](/app/assets/images/Form.png)
 ![Calendar](/app/assets/images/calendar.png)
 ![Mentor](/app/assets/images/mentor.png)
-![Mentee](/app/assets/images/mentee.png)
+![Mentee](/app/assets/images/mentee.png)-->
+![Collage](/app/assets/images/collage.png)
+
 
 ## Contributors
 
