@@ -1,10 +1,10 @@
 #README
 
 ## The Problem
-There isn't enough diversity in tech.
+DBC has the stated mission of increasing diversity in tech. However, tech companies could be doing more to support new bootcamp grads make meaningful connections that will help them get placed in a role their well suited for.
 
 ## The Solution
-Match aspiring developers with mentors working in the field to promote nurturing connections based on their common context rather than existing connections. 
+Common Context matches aspiring developers, based on their demographic context, rather than existing network, with mentors working in the field, and promotes nurturing connections.
 
 ## Screenshots
 ![Splash](/app/assets/images/splash.png)
@@ -19,3 +19,7 @@ Match aspiring developers with mentors working in the field to promote nurturing
 * [Matthew Eller](https://github.com/mattheweller)
 * [Dharini Murugaprabhu](https://github.com/dharinim)
 * [Rebecca Orr](https://github.com/rreorr)
+
+## The site
+
+* [Common Context](http://www.commoncontext.info/)
