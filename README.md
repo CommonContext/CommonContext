@@ -1,7 +1,7 @@
 #README
 
 ## The Problem
-DBC has the stated mission of increasing diversity in tech. However, tech companies could be doing more to support new bootcamp grads make meaningful connections that will help them get placed in a role their well suited for.
+DBC has the stated mission of increasing diversity in tech. However, tech companies could be doing more to support new bootcamp grads make meaningful connections that will help them get placed in a role they're well suited for.
 
 ## The Solution
 Common Context matches aspiring developers, based on their demographic context, rather than existing network, with mentors working in the field, and promotes nurturing connections.
