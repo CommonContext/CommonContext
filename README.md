@@ -7,11 +7,13 @@ DBC has the stated mission of increasing diversity in tech. However, tech compan
 Common Context matches aspiring developers, based on their demographic context, rather than existing network, with mentors working in the field, and promotes nurturing connections.
 
 ## Screenshots
-![Splash](/app/assets/images/splash.png)
+<!--![Splash](/app/assets/images/splash.png)
 ![Form](/app/assets/images/Form.png)
 ![Calendar](/app/assets/images/calendar.png)
 ![Mentor](/app/assets/images/mentor.png)
-![Mentee](/app/assets/images/mentee.png)
+![Mentee](/app/assets/images/mentee.png)-->
+![Collage](/app/assets/images/collage.png)
+
 
 ## Contributors
 
