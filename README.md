@@ -14,6 +14,15 @@ Match aspiring developers with mentors working in the field to promote nurturing
 ![Mentee](/app/assets/images/mentee.png)-->
 ![Collage](/app/assets/images/collage.png)
 
+## App Usage Flow
+
+* A user logs in and signs up as a mentor using their Linkedin credentials.
+* The mentor then creates an appointment time slot.
+* An aspiring developer logs in using their Linkedin credentials and signs up as a mentee.
+* The mentee requests matches for mentors to connect with, and then chooses their preferred match.
+* The mentee then selects the time slot available to them based on their matched mentor's preferences
+* Both mentor and mentee can view their appointments in the calendar and reschedule their meeting if necessary.
+
 
 ## Contributors
 
