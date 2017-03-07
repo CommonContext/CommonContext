@@ -1,4 +1,4 @@
-#README
+#[CommonContext](http://www.commoncontext.info/)
 
 ## The Problem
 DBC has the stated mission of increasing diversity in tech. However, tech companies could be doing more to support new bootcamp grads make meaningful connections that will help them get placed in a role they're well suited for.
@@ -41,6 +41,3 @@ We implemented Agile Workflow throughout this project, and established a health 
 * Communication via Slack / Trello
 * Resources for User stories and style guide with InVision, and Frontify.
 
-## The site
-
-* [Common Context](http://www.commoncontext.info/)
